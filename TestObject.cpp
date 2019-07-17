@@ -9,6 +9,7 @@ void TestObject::Init()
 
 void TestObject::Update()
 {
+
 }
 
 void TestObject::Render()
