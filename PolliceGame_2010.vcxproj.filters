@@ -1,0 +1,351 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns:atg="http://atg.xbox.com" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="ENGINE">
+      <UniqueIdentifier>{830170d7-1d0c-426b-8d7c-d94296e29135}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ENGINE\Resource Files">
+      <UniqueIdentifier>{8e114980-c1a3-4ada-ad7c-83caadf5daeb}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
+    </Filter>
+    <Filter Include="ENGINE\Shaders">
+      <UniqueIdentifier>{2c3d4c8c-5d1a-459a-a05a-a4e4b608a44e}</UniqueIdentifier>
+      <Extensions>fx;fxh;hlsl</Extensions>
+    </Filter>
+    <Filter Include="ENGINE\Managers">
+      <UniqueIdentifier>{a4d5b39c-c503-40c8-ba34-5f882238fbc2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ENGINE\Managers\Resource">
+      <UniqueIdentifier>{122ae7e3-06ea-40bd-9875-a712063ee99c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ENGINE\Managers\Scene">
+      <UniqueIdentifier>{9c0c7872-3683-45b5-9970-75ed921ae824}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ENGINE\Managers\Input">
+      <UniqueIdentifier>{c54bd8c5-8b63-49b4-92a6-15f7e0a25bd2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ENGINE\Managers\Object">
+      <UniqueIdentifier>{a9477c9e-3cfa-4180-830b-2b6ead29270f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ENGINE\Managers\Collision">
+      <UniqueIdentifier>{042efbf8-b4ed-436a-a808-a01706925b18}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ENGINE\DXUT">
+      <UniqueIdentifier>{a43c5c25-0e86-4a20-b64a-883785ff74fd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ENGINE\Base">
+      <UniqueIdentifier>{e2ab7790-4cd2-49fc-b800-f707c0946106}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ENGINE\Base\Singleton">
+      <UniqueIdentifier>{039b77ee-859f-4612-b82c-66a3ecc6dd01}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ENGINE\Header Files">
+      <UniqueIdentifier>{290d82dc-e01a-4d7b-95b3-87fb7c2e84d6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ENGINE\Base\Scene">
+      <UniqueIdentifier>{7d1c98db-6ef3-40d4-acc5-1c32180e4112}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ENGINE\Base\Resource">
+      <UniqueIdentifier>{ff64b9d7-05db-4c31-9917-56adad5de41e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ENGINE\Base\Resource\Texture">
+      <UniqueIdentifier>{de6ac635-f760-4c39-b334-f45ce6674194}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ENGINE\Base\Resource\Sound">
+      <UniqueIdentifier>{bb4a30d1-f994-434e-91a1-184a17eb04c9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ENGINE\Base\Resource\Texture\Single">
+      <UniqueIdentifier>{b3bf9c0b-8e80-4cfe-a0e2-ee7a6fdd5045}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ENGINE\Base\Resource\Texture\Multi">
+      <UniqueIdentifier>{ac4edee8-3e38-47a2-bcc7-792906b52693}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ENGINE\Base\GameObject">
+      <UniqueIdentifier>{6a12cbdb-0718-461c-9f42-20e506d2e23e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ENGINE\Object">
+      <UniqueIdentifier>{7755c497-e569-4494-a4bc-e2523d2d1704}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ENGINE\Object\Collision">
+      <UniqueIdentifier>{3da7cb34-314d-44f0-a9aa-e1e03a9f7739}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ENGINE\Component">
+      <UniqueIdentifier>{1261dd1c-0f04-4a62-9172-d09bfd23f4f7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ENGINE\Component\Collider2D">
+      <UniqueIdentifier>{046d2185-a2b1-4796-969d-21e16ef2f57c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ENGINE\Object\EventHandler">
+      <UniqueIdentifier>{38e67b14-e6d8-4490-b3ac-a6974655f764}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ENGINE\Object\EventHandler\EventArgs">
+      <UniqueIdentifier>{4890e838-e829-4346-8382-fb5bb0245527}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ENGINE\Object\EventHandler\EventArgs\TouchEventArgs">
+      <UniqueIdentifier>{8977beb1-b013-4c3b-b89a-a75d67e22eb1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="PolliceGame">
+      <UniqueIdentifier>{be515133-0e24-40d1-ada0-6b045afd9a1a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="PolliceGame\Scripts">
+      <UniqueIdentifier>{680c9775-03dc-4dc5-9fa3-af3182fdbcff}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="PolliceGame\Scripts\TestObject">
+      <UniqueIdentifier>{7d236a2e-36ef-44c5-9797-ef8a67f49d73}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="PolliceGame\Scenes">
+      <UniqueIdentifier>{69b45db5-11ee-409b-a482-6fa99dcb2e0d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="PolliceGame\MainGame">
+      <UniqueIdentifier>{df497d16-d636-464c-ba65-dc7a036500c5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="PolliceGame\Scenes\Intro">
+      <UniqueIdentifier>{bb43325c-d902-46f2-a2e1-55e94679aceb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="PolliceGame\Scenes\Menu">
+      <UniqueIdentifier>{1b3dc1c1-a4b0-46ca-9073-208cf4d7e8cc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="PolliceGame\Scenes\Stage1">
+      <UniqueIdentifier>{52964360-cec8-46b8-85a7-803ad9766988}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="PolliceGame\Scenes\Ending">
+      <UniqueIdentifier>{327f81bb-5c19-4711-9db1-f9d69ce6e670}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ENGINE\Component\Transform">
+      <UniqueIdentifier>{38005411-e016-42c5-8857-3c87526b0b25}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="DXUT\Optional\directx.ico">
+      <Filter>ENGINE\Resource Files</Filter>
+    </None>
+    <ClInclude Include="DXUT\Core\DXUT.h">
+      <Filter>ENGINE\DXUT</Filter>
+    </ClInclude>
+    <ClInclude Include="DXUT\Core\DXUTenum.h">
+      <Filter>ENGINE\DXUT</Filter>
+    </ClInclude>
+    <ClInclude Include="DXUT\Core\DXUTmisc.h">
+      <Filter>ENGINE\DXUT</Filter>
+    </ClInclude>
+    <ClCompile Include="DXUT\Core\DXUT.cpp">
+      <Filter>ENGINE\DXUT</Filter>
+    </ClCompile>
+    <ClCompile Include="DXUT\Core\DXUTenum.cpp">
+      <Filter>ENGINE\DXUT</Filter>
+    </ClCompile>
+    <ClCompile Include="DXUT\Core\DXUTmisc.cpp">
+      <Filter>ENGINE\DXUT</Filter>
+    </ClCompile>
+    <ClInclude Include="DXUT\Optional\DXUTcamera.h">
+      <Filter>ENGINE\DXUT</Filter>
+    </ClInclude>
+    <ClInclude Include="DXUT\Optional\DXUTgui.h">
+      <Filter>ENGINE\DXUT</Filter>
+    </ClInclude>
+    <ClInclude Include="DXUT\Optional\DXUTres.h">
+      <Filter>ENGINE\DXUT</Filter>
+    </ClInclude>
+    <ClInclude Include="DXUT\Optional\DXUTsettingsdlg.h">
+      <Filter>ENGINE\DXUT</Filter>
+    </ClInclude>
+    <ClInclude Include="DXUT\Optional\SDKmesh.h">
+      <Filter>ENGINE\DXUT</Filter>
+    </ClInclude>
+    <ClInclude Include="DXUT\Optional\SDKmisc.h">
+      <Filter>ENGINE\DXUT</Filter>
+    </ClInclude>
+    <ClCompile Include="DXUT\Optional\DXUTcamera.cpp">
+      <Filter>ENGINE\DXUT</Filter>
+    </ClCompile>
+    <ClCompile Include="DXUT\Optional\DXUTgui.cpp">
+      <Filter>ENGINE\DXUT</Filter>
+    </ClCompile>
+    <ClCompile Include="DXUT\Optional\DXUTres.cpp">
+      <Filter>ENGINE\DXUT</Filter>
+    </ClCompile>
+    <ClCompile Include="DXUT\Optional\DXUTsettingsdlg.cpp">
+      <Filter>ENGINE\DXUT</Filter>
+    </ClCompile>
+    <ClCompile Include="DXUT\Optional\SDKmesh.cpp">
+      <Filter>ENGINE\DXUT</Filter>
+    </ClCompile>
+    <ClCompile Include="DXUT\Optional\SDKmisc.cpp">
+      <Filter>ENGINE\DXUT</Filter>
+    </ClCompile>
+    <None Include="Define.h">
+      <Filter>ENGINE\Header Files</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="MainGame.cpp">
+      <Filter>PolliceGame\MainGame</Filter>
+    </ClCompile>
+    <ClCompile Include="InputManager.cpp">
+      <Filter>ENGINE\Managers\Input</Filter>
+    </ClCompile>
+    <ClCompile Include="Singleton.cpp">
+      <Filter>ENGINE\Base\Singleton</Filter>
+    </ClCompile>
+    <ClCompile Include="EventHandler.cpp">
+      <Filter>ENGINE\Object\EventHandler</Filter>
+    </ClCompile>
+    <ClCompile Include="CollisionManager.cpp">
+      <Filter>ENGINE\Managers\Collision</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjectManager.cpp">
+      <Filter>ENGINE\Managers\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="ResourceManager.cpp">
+      <Filter>ENGINE\Managers\Resource</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneManager.cpp">
+      <Filter>ENGINE\Managers\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene.cpp">
+      <Filter>ENGINE\Base\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="BaseResource.cpp">
+      <Filter>ENGINE\Base\Resource</Filter>
+    </ClCompile>
+    <ClCompile Include="Texture.cpp">
+      <Filter>ENGINE\Base\Resource\Texture</Filter>
+    </ClCompile>
+    <ClCompile Include="MultiTexture.cpp">
+      <Filter>ENGINE\Base\Resource\Texture\Multi</Filter>
+    </ClCompile>
+    <ClCompile Include="SingleTexture.cpp">
+      <Filter>ENGINE\Base\Resource\Texture\Single</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObject.cpp">
+      <Filter>ENGINE\Base\GameObject</Filter>
+    </ClCompile>
+    <ClCompile Include="Collision.cpp">
+      <Filter>ENGINE\Object\Collision</Filter>
+    </ClCompile>
+    <ClCompile Include="Component.cpp">
+      <Filter>ENGINE\Component</Filter>
+    </ClCompile>
+    <ClCompile Include="Collider2D.cpp">
+      <Filter>ENGINE\Component\Collider2D</Filter>
+    </ClCompile>
+    <ClCompile Include="EventArgs.cpp">
+      <Filter>ENGINE\Object\EventHandler\EventArgs</Filter>
+    </ClCompile>
+    <ClCompile Include="TouchEventArgs.cpp">
+      <Filter>ENGINE\Object\EventHandler\EventArgs\TouchEventArgs</Filter>
+    </ClCompile>
+    <ClCompile Include="PolliceGame.cpp">
+      <Filter>PolliceGame</Filter>
+    </ClCompile>
+    <ClCompile Include="TestObject.cpp">
+      <Filter>PolliceGame\Scripts\TestObject</Filter>
+    </ClCompile>
+    <ClCompile Include="IntroScene.cpp">
+      <Filter>PolliceGame\Scenes\Intro</Filter>
+    </ClCompile>
+    <ClCompile Include="MenuScene.cpp">
+      <Filter>PolliceGame\Scenes\Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="EndingScene.cpp">
+      <Filter>PolliceGame\Scenes\Ending</Filter>
+    </ClCompile>
+    <ClCompile Include="Stage1Scene.cpp">
+      <Filter>PolliceGame\Scenes\Stage1</Filter>
+    </ClCompile>
+    <ClCompile Include="Transform.cpp">
+      <Filter>ENGINE\Component\Transform</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CLInclude Include="resource.h">
+      <Filter>ENGINE\Resource Files</Filter>
+    </CLInclude>
+    <ResourceCompile Include="PolliceGame.rc">
+      <Filter>ENGINE\Resource Files</Filter>
+    </ResourceCompile>
+    <ClInclude Include="MainGame.h">
+      <Filter>PolliceGame\MainGame</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>ENGINE\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Debug.h">
+      <Filter>ENGINE\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="InputManager.h">
+      <Filter>ENGINE\Managers\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="Singleton.h">
+      <Filter>ENGINE\Base\Singleton</Filter>
+    </ClInclude>
+    <ClInclude Include="EventHandler.h">
+      <Filter>ENGINE\Object\EventHandler</Filter>
+    </ClInclude>
+    <ClInclude Include="CollisionManager.h">
+      <Filter>ENGINE\Managers\Collision</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjectManager.h">
+      <Filter>ENGINE\Managers\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="ResourceManager.h">
+      <Filter>ENGINE\Managers\Resource</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneManager.h">
+      <Filter>ENGINE\Managers\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene.h">
+      <Filter>ENGINE\Base\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseResource.h">
+      <Filter>ENGINE\Base\Resource</Filter>
+    </ClInclude>
+    <ClInclude Include="Texture.h">
+      <Filter>ENGINE\Base\Resource\Texture</Filter>
+    </ClInclude>
+    <ClInclude Include="MultiTexture.h">
+      <Filter>ENGINE\Base\Resource\Texture\Multi</Filter>
+    </ClInclude>
+    <ClInclude Include="SingleTexture.h">
+      <Filter>ENGINE\Base\Resource\Texture\Single</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObject.h">
+      <Filter>ENGINE\Base\GameObject</Filter>
+    </ClInclude>
+    <ClInclude Include="Collision.h">
+      <Filter>ENGINE\Object\Collision</Filter>
+    </ClInclude>
+    <ClInclude Include="Component.h">
+      <Filter>ENGINE\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="Collider2D.h">
+      <Filter>ENGINE\Component\Collider2D</Filter>
+    </ClInclude>
+    <ClInclude Include="EventArgs.h">
+      <Filter>ENGINE\Object\EventHandler\EventArgs</Filter>
+    </ClInclude>
+    <ClInclude Include="TouchEventArgs.h">
+      <Filter>ENGINE\Object\EventHandler\EventArgs\TouchEventArgs</Filter>
+    </ClInclude>
+    <ClInclude Include="TestObject.h">
+      <Filter>PolliceGame\Scripts\TestObject</Filter>
+    </ClInclude>
+    <ClInclude Include="IntroScene.h">
+      <Filter>PolliceGame\Scenes\Intro</Filter>
+    </ClInclude>
+    <ClInclude Include="MenuScene.h">
+      <Filter>PolliceGame\Scenes\Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="EndingScene.h">
+      <Filter>PolliceGame\Scenes\Ending</Filter>
+    </ClInclude>
+    <ClInclude Include="Stage1Scene.h">
+      <Filter>PolliceGame\Scenes\Stage1</Filter>
+    </ClInclude>
+    <ClInclude Include="Transform.h">
+      <Filter>ENGINE\Component\Transform</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+</Project>
