@@ -44,14 +44,6 @@ void SceneManager::Update()
 	}
 }
 
-void SceneManager::Render()
-{
-	if (nowScene != nullptr)
-	{
-		nowScene->Render();
-	}
-}
-
 void SceneManager::Reset()
 {
 	if (nowScene != nullptr)

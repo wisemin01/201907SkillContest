@@ -9,10 +9,6 @@ void EndingScene::Update()
 {
 }
 
-void EndingScene::Render()
-{
-}
-
 void EndingScene::Destroy()
 {
 }

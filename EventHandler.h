@@ -87,7 +87,7 @@ public:
 	}
 };
 
-/* =======================================
+/* o=======================================o
    Lambda를 사용해 새 이벤트를 생성합니다.
-   =======================================*/
+   o=======================================o*/
 #define CreateEvent(paramType, Func) new Event<paramType>([&](object sender, paramType args){ Func(sender, args); })

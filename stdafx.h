@@ -20,6 +20,13 @@ using namespace std;
 #include "Debug.h"
 #include "Define.h"
 #include "EventHandler.h"
+#include "Time.h"
+#include "Timer.h"
+
+#include "GameObject.h"
+
+ostream& operator<<(ostream& os, Vector2 _Val);
+ostream& operator<<(ostream& os, Vector3 _Val);
 
 // MANAGER INCLUDE
 
@@ -28,7 +35,9 @@ using namespace std;
 #include "ObjectManager.h"
 #include "SceneManager.h"
 #include "ResourceManager.h"
+#include "RenderManager.h"
 
 // COMPONENT
 
-#include "Collider2D.h"
+#include "Transform.h"
+#include "Renderer.h"

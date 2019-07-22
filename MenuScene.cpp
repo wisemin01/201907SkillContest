@@ -9,10 +9,6 @@ void MenuScene::Update()
 {
 }
 
-void MenuScene::Render()
-{
-}
-
 void MenuScene::Destroy()
 {
 }

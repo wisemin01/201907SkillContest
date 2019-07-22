@@ -1,5 +1,6 @@
 #pragma once
 
-class BaseResource
+class BaseResource abstract
 {
+
 };

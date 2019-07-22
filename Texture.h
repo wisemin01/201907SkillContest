@@ -4,7 +4,7 @@
 class Texture :
 	public BaseResource
 {
-protected:
+public:
 	D3DXIMAGE_INFO info;
 	LPDIRECT3DTEXTURE9 texture;
 public:

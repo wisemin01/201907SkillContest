@@ -26,7 +26,7 @@ void MainGame::Render()
 {
 	RESOURCE.RenderBegin();
 
-	SCENE.Render();
+	RENDER.Render();
 
 	RESOURCE.RenderEnd();
 }

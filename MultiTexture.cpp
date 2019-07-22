@@ -1,17 +1,42 @@
 #include "DXUT.h"
 #include "MultiTexture.h"
 
+#include "SingleTexture.h"
+
 void MultiTexture::Add(const std::string& path, int count)
 {
+	char str[256] = { 0 };
+	texVec.reserve(count + 1);
 
+	for (int i = 0; i <= count; i++)
+	{
+		sprintf(str, path.c_str(), i);
+	
+		Texture* t = new SingleTexture();
+
+		t->Add(str, 0);
+
+		texVec.push_back(t);
+	}
 }
 
 Texture* MultiTexture::Get(int count)
 {
-	return nullptr;
+	if (count == -1)
+		return this;
+	else
+	{
+		try {
+			return texVec[count];
+		}
+		catch(object)
+		{
+			return nullptr;
+		}
+	}
 }
 
 unsigned int MultiTexture::Size()
 {
-	return 0;
+	return texVec.size();
 }

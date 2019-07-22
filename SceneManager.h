@@ -19,7 +19,6 @@ public:
 	void ChangeScene(const string& key);
 
 	void Update();
-	void Render();
 
 	void Reset();
 };

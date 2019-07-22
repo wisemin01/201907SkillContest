@@ -10,12 +10,7 @@ void IntroScene::Init()
 
 void IntroScene::Update()
 {
-
-}
-
-void IntroScene::Render()
-{
-
+	OBJECT.Update();
 }
 
 void IntroScene::Destroy()

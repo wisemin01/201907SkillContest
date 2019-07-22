@@ -9,8 +9,7 @@ void TestObject::Init()
 
 void TestObject::Update()
 {
-
-}
+} 
 
 void TestObject::Render()
 {
@@ -24,5 +23,5 @@ void TestObject::Destroy()
 
 void TestObject::OnMouseClick(object sender, TouchEventArgs args)
 {
-	cout << args.MousePosition.x << ", " << args.MousePosition.y << endl;
+	cout << args.MousePosition << endl;
 }

@@ -9,10 +9,6 @@ void Stage1Scene::Update()
 {
 }
 
-void Stage1Scene::Render()
-{
-}
-
 void Stage1Scene::Destroy()
 {
 }

@@ -1,7 +1,7 @@
 #pragma once
 
 class GameObject;
-class Component
+class Component abstract
 {
 private:
 	GameObject* baseObject;
@@ -23,5 +23,9 @@ private:
 	{
 		baseObject = owner;
 	}
+
+	virtual void Init() = 0;
+	virtual void Update() = 0;
+	virtual void Destroy() = 0;
 };
 
