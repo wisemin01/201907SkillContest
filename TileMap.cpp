@@ -15,17 +15,17 @@ void TileMapRenderer::LoadFromFile(const string& path)
 			switch (tile.tileNumber)
 			{
 			case 0:
-				printf("A");
+				printf("A ");
 
 				break;
 
 			case 1:
-				printf("B");
+				printf("B ");
 
 				break;
 
 			case 2:
-				printf("C");
+				printf("C ");
 
 				break;
 			}
@@ -33,6 +33,7 @@ void TileMapRenderer::LoadFromFile(const string& path)
 
 		printf("\n");
 	}
+	int a = 0;
 }
 
 void TileMapRenderer::Init()
@@ -117,7 +118,7 @@ bool TileMapRenderer::ParseLine(ifstream& stream)
 		stream >> tileHeight;
 	}
 
-	stream.ignore(1000, '\n');
+	stream.ignore(1000, 0);
 
 	return true;
 }
@@ -134,4 +135,6 @@ void TileMapRenderer::Parse(const string& fileName)
 		if (ParseLine(InFile) == false)
 			break;
 	}
+
+	InFile.close();
 }

@@ -1,6 +1,6 @@
 ﻿  TileMap.cpp
-D:\Programing project\[ 기능대회 ]\PolliceGame\TileMap.cpp(9,19): warning C4189:  'r': 지역 변수가 초기화되었으나 참조되지 않았습니다.
-D:\Programing project\[ 기능대회 ]\PolliceGame\TileMap.cpp(38,16): warning C4458:  'mesh' 선언은 클래스 멤버를 숨깁니다.
+D:\Programing project\[ 기능대회 ]\PolliceGame\TileMap.cpp(36,6): warning C4189:  'a': 지역 변수가 초기화되었으나 참조되지 않았습니다.
+D:\Programing project\[ 기능대회 ]\PolliceGame\TileMap.cpp(65,16): warning C4458:  'mesh' 선언은 클래스 멤버를 숨깁니다.
 D:\Programing project\[ 기능대회 ]\PolliceGame\MeshRenderer.h(10,8): message :  'MeshRenderer::mesh' 선언을 참조하십시오.
-D:\Programing project\[ 기능대회 ]\PolliceGame\TileMap.cpp(43,36): warning C4244:  '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\Programing project\[ 기능대회 ]\PolliceGame\TileMap.cpp(70,36): warning C4244:  '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
   PolliceGame_2010.vcxproj -> D:\Programing project\[ 기능대회 ]\PolliceGame\Debug\PolliceGame.exe
