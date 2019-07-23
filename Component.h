@@ -3,9 +3,11 @@
 class GameObject;
 class Component abstract
 {
+	friend class GameObject;
 private:
-	GameObject* baseObject;
+	GameObject* baseObject = nullptr;
 public:
+	Component() {}
 	Component(GameObject* base)
 	{
 		gameObject = base;
@@ -24,6 +26,7 @@ private:
 		baseObject = owner;
 	}
 
+public:
 	virtual void Init() = 0;
 	virtual void Update() = 0;
 	virtual void Destroy() = 0;

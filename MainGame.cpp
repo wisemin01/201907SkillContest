@@ -24,15 +24,18 @@ void MainGame::Update()
 
 void MainGame::Render()
 {
-	RESOURCE.RenderBegin();
-
 	RENDER.Render();
-
-	RESOURCE.RenderEnd();
 }
 
 void MainGame::Destroy()
 {
+	SceneManager::Destroy();
+	ObjectManager::Destroy();
+	CollisionManager::Destroy();
+	RenderManager::Destroy();
+	ResourceManager::Destroy();
+	InputManager::Destroy();
+	CameraManager::Destroy();
 }
 
 void MainGame::OnReset()

@@ -17,8 +17,9 @@ enum Window
 
 using namespace std;
 
-#include "Debug.h"
+#include "Math.h"
 #include "Define.h"
+#include "Debug.h"
 #include "EventHandler.h"
 #include "Time.h"
 #include "Timer.h"
@@ -36,8 +37,11 @@ ostream& operator<<(ostream& os, Vector3 _Val);
 #include "SceneManager.h"
 #include "ResourceManager.h"
 #include "RenderManager.h"
+#include "CameraManager.h"
 
 // COMPONENT
 
 #include "Transform.h"
 #include "Renderer.h"
+#include "MeshRenderer.h"
+#include "Camera.h"

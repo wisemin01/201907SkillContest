@@ -4,7 +4,7 @@
 class TouchEventArgs : EventArgs
 {
 public:
-	Vector2 MousePosition = Vector2_Zero;
+	Vector2 MousePosition = Vector2::Zero;
 	bool isEndProcess = false;
 
 	TouchEventArgs(Vector2 pos)

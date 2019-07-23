@@ -72,7 +72,8 @@ D3DXVECTOR3 CD3DArcBall::ScreenToVector( float fScreenPtX, float fScreenPtY )
 D3DXQUATERNION CD3DArcBall::QuatFromBallPoints( const D3DXVECTOR3& vFrom, const D3DXVECTOR3& vTo )
 {
     D3DXVECTOR3 vPart;
-    float fDot = D3DXVec3Dot( &vFrom, &vTo );
+    float fDot = 
+		D3DXVec3Dot( &vFrom, &vTo );
     D3DXVec3Cross( &vPart, &vFrom, &vTo );
 
     return D3DXQUATERNION( vPart.x, vPart.y, vPart.z, fDot );

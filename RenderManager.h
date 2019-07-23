@@ -8,6 +8,8 @@ class RenderManager :
 private:
 	std::list<Renderer*> rendererList;
 public:
+	RenderManager();
+	~RenderManager();
 
 	void Add(Renderer* renderer);
 	void Remove(Renderer* renderer);

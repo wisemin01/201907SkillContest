@@ -8,6 +8,9 @@ public:
 	D3DXIMAGE_INFO info;
 	LPDIRECT3DTEXTURE9 texture;
 public:
+	Texture();
+	~Texture();
+
 	virtual void Add(const std::string& path, int count = 0) = 0;
 	virtual Texture* Get(int count = -1) = 0;
 

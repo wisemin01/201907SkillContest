@@ -30,6 +30,7 @@ void SceneManager::Update()
 		if (nowScene != nullptr)
 		{
 			nowScene->Destroy();
+			OBJECT.Reset();
 		}
 
 		nowScene = nextScene;
@@ -57,4 +58,7 @@ void SceneManager::Reset()
 	}
 
 	sceneMap.clear();
+
+	nowScene = nullptr;
+	nextScene = nullptr;
 }

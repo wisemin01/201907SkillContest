@@ -4,14 +4,6 @@
     <Filter Include="ENGINE">
       <UniqueIdentifier>{830170d7-1d0c-426b-8d7c-d94296e29135}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ENGINE\Resource Files">
-      <UniqueIdentifier>{8e114980-c1a3-4ada-ad7c-83caadf5daeb}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
-    </Filter>
-    <Filter Include="ENGINE\Shaders">
-      <UniqueIdentifier>{2c3d4c8c-5d1a-459a-a05a-a4e4b608a44e}</UniqueIdentifier>
-      <Extensions>fx;fxh;hlsl</Extensions>
-    </Filter>
     <Filter Include="ENGINE\Managers">
       <UniqueIdentifier>{a4d5b39c-c503-40c8-ba34-5f882238fbc2}</UniqueIdentifier>
     </Filter>
@@ -30,9 +22,6 @@
     <Filter Include="ENGINE\Managers\Collision">
       <UniqueIdentifier>{042efbf8-b4ed-436a-a808-a01706925b18}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ENGINE\DXUT">
-      <UniqueIdentifier>{a43c5c25-0e86-4a20-b64a-883785ff74fd}</UniqueIdentifier>
-    </Filter>
     <Filter Include="ENGINE\Base">
       <UniqueIdentifier>{e2ab7790-4cd2-49fc-b800-f707c0946106}</UniqueIdentifier>
     </Filter>
@@ -44,21 +33,6 @@
     </Filter>
     <Filter Include="ENGINE\Base\Scene">
       <UniqueIdentifier>{7d1c98db-6ef3-40d4-acc5-1c32180e4112}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ENGINE\Base\Resource">
-      <UniqueIdentifier>{ff64b9d7-05db-4c31-9917-56adad5de41e}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ENGINE\Base\Resource\Texture">
-      <UniqueIdentifier>{de6ac635-f760-4c39-b334-f45ce6674194}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ENGINE\Base\Resource\Sound">
-      <UniqueIdentifier>{bb4a30d1-f994-434e-91a1-184a17eb04c9}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ENGINE\Base\Resource\Texture\Single">
-      <UniqueIdentifier>{b3bf9c0b-8e80-4cfe-a0e2-ee7a6fdd5045}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ENGINE\Base\Resource\Texture\Multi">
-      <UniqueIdentifier>{ac4edee8-3e38-47a2-bcc7-792906b52693}</UniqueIdentifier>
     </Filter>
     <Filter Include="ENGINE\Base\GameObject">
       <UniqueIdentifier>{6a12cbdb-0718-461c-9f42-20e506d2e23e}</UniqueIdentifier>
@@ -96,9 +70,6 @@
     <Filter Include="ENGINE\Component\Transform">
       <UniqueIdentifier>{38005411-e016-42c5-8857-3c87526b0b25}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ENGINE\MeshLoader">
-      <UniqueIdentifier>{82e14a99-e057-4524-ba05-a5b088ff49ad}</UniqueIdentifier>
-    </Filter>
     <Filter Include="ENGINE\System">
       <UniqueIdentifier>{7755c497-e569-4494-a4bc-e2523d2d1704}</UniqueIdentifier>
     </Filter>
@@ -126,64 +97,107 @@
     <Filter Include="ENGINE\Component\Renderer\Mesh">
       <UniqueIdentifier>{cac04a21-a64a-4a50-bc64-9256d282fe27}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ENGINE\Managers\Camera">
+      <UniqueIdentifier>{6c47c034-aa07-4d87-9886-42a7f7eeeb56}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ENGINE\System\Math">
+      <UniqueIdentifier>{607d33bc-037d-4452-b60e-f237082216cd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ENGINE\Resource Type">
+      <UniqueIdentifier>{374a381e-6150-4e25-816a-4ac280799678}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ENGINE\SkyBox">
+      <UniqueIdentifier>{a89fd240-98c4-4e5a-93d7-5e21d36382fa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ENGINE\Camera">
+      <UniqueIdentifier>{c661e013-4b7b-4cdd-ae1a-331efc6e12eb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ENGINE\Resource Type\Mesh">
+      <UniqueIdentifier>{82e14a99-e057-4524-ba05-a5b088ff49ad}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ENGINE\Resource Type\Sound">
+      <UniqueIdentifier>{bb4a30d1-f994-434e-91a1-184a17eb04c9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ENGINE\Resource Type\Texture">
+      <UniqueIdentifier>{de6ac635-f760-4c39-b334-f45ce6674194}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ENGINE\Resource Type\Texture\Single">
+      <UniqueIdentifier>{b3bf9c0b-8e80-4cfe-a0e2-ee7a6fdd5045}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ENGINE\Resource Type\Texture\Multi">
+      <UniqueIdentifier>{ac4edee8-3e38-47a2-bcc7-792906b52693}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DXUT">
+      <UniqueIdentifier>{a43c5c25-0e86-4a20-b64a-883785ff74fd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{8e114980-c1a3-4ada-ad7c-83caadf5daeb}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
+    </Filter>
+    <Filter Include="ENGINE\Header Files\stdafx">
+      <UniqueIdentifier>{bd34fa46-5b51-479a-8bcd-8786290a7404}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ENGINE\Resource Type\TileMap">
+      <UniqueIdentifier>{9f1a9536-4690-45e1-986a-5d11f5a58780}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="DXUT\Optional\directx.ico">
-      <Filter>ENGINE\Resource Files</Filter>
+      <Filter>Resource Files</Filter>
     </None>
     <ClInclude Include="DXUT\Core\DXUT.h">
-      <Filter>ENGINE\DXUT</Filter>
+      <Filter>DXUT</Filter>
     </ClInclude>
     <ClInclude Include="DXUT\Core\DXUTenum.h">
-      <Filter>ENGINE\DXUT</Filter>
+      <Filter>DXUT</Filter>
     </ClInclude>
     <ClInclude Include="DXUT\Core\DXUTmisc.h">
-      <Filter>ENGINE\DXUT</Filter>
+      <Filter>DXUT</Filter>
     </ClInclude>
     <ClCompile Include="DXUT\Core\DXUT.cpp">
-      <Filter>ENGINE\DXUT</Filter>
+      <Filter>DXUT</Filter>
     </ClCompile>
     <ClCompile Include="DXUT\Core\DXUTenum.cpp">
-      <Filter>ENGINE\DXUT</Filter>
+      <Filter>DXUT</Filter>
     </ClCompile>
     <ClCompile Include="DXUT\Core\DXUTmisc.cpp">
-      <Filter>ENGINE\DXUT</Filter>
+      <Filter>DXUT</Filter>
     </ClCompile>
     <ClInclude Include="DXUT\Optional\DXUTcamera.h">
-      <Filter>ENGINE\DXUT</Filter>
+      <Filter>DXUT</Filter>
     </ClInclude>
     <ClInclude Include="DXUT\Optional\DXUTgui.h">
-      <Filter>ENGINE\DXUT</Filter>
+      <Filter>DXUT</Filter>
     </ClInclude>
     <ClInclude Include="DXUT\Optional\DXUTres.h">
-      <Filter>ENGINE\DXUT</Filter>
+      <Filter>DXUT</Filter>
     </ClInclude>
     <ClInclude Include="DXUT\Optional\DXUTsettingsdlg.h">
-      <Filter>ENGINE\DXUT</Filter>
+      <Filter>DXUT</Filter>
     </ClInclude>
     <ClInclude Include="DXUT\Optional\SDKmesh.h">
-      <Filter>ENGINE\DXUT</Filter>
+      <Filter>DXUT</Filter>
     </ClInclude>
     <ClInclude Include="DXUT\Optional\SDKmisc.h">
-      <Filter>ENGINE\DXUT</Filter>
+      <Filter>DXUT</Filter>
     </ClInclude>
     <ClCompile Include="DXUT\Optional\DXUTcamera.cpp">
-      <Filter>ENGINE\DXUT</Filter>
+      <Filter>DXUT</Filter>
     </ClCompile>
     <ClCompile Include="DXUT\Optional\DXUTgui.cpp">
-      <Filter>ENGINE\DXUT</Filter>
+      <Filter>DXUT</Filter>
     </ClCompile>
     <ClCompile Include="DXUT\Optional\DXUTres.cpp">
-      <Filter>ENGINE\DXUT</Filter>
+      <Filter>DXUT</Filter>
     </ClCompile>
     <ClCompile Include="DXUT\Optional\DXUTsettingsdlg.cpp">
-      <Filter>ENGINE\DXUT</Filter>
+      <Filter>DXUT</Filter>
     </ClCompile>
     <ClCompile Include="DXUT\Optional\SDKmesh.cpp">
-      <Filter>ENGINE\DXUT</Filter>
+      <Filter>DXUT</Filter>
     </ClCompile>
     <ClCompile Include="DXUT\Optional\SDKmisc.cpp">
-      <Filter>ENGINE\DXUT</Filter>
+      <Filter>DXUT</Filter>
     </ClCompile>
     <None Include="Define.h">
       <Filter>ENGINE\Header Files</Filter>
@@ -217,17 +231,14 @@
     <ClCompile Include="Scene.cpp">
       <Filter>ENGINE\Base\Scene</Filter>
     </ClCompile>
-    <ClCompile Include="BaseResource.cpp">
-      <Filter>ENGINE\Base\Resource</Filter>
-    </ClCompile>
     <ClCompile Include="Texture.cpp">
-      <Filter>ENGINE\Base\Resource\Texture</Filter>
+      <Filter>ENGINE\Resource Type\Texture</Filter>
     </ClCompile>
     <ClCompile Include="MultiTexture.cpp">
-      <Filter>ENGINE\Base\Resource\Texture\Multi</Filter>
+      <Filter>ENGINE\Resource Type\Texture\Multi</Filter>
     </ClCompile>
     <ClCompile Include="SingleTexture.cpp">
-      <Filter>ENGINE\Base\Resource\Texture\Single</Filter>
+      <Filter>ENGINE\Resource Type\Texture\Single</Filter>
     </ClCompile>
     <ClCompile Include="GameObject.cpp">
       <Filter>ENGINE\Base\GameObject</Filter>
@@ -262,12 +273,6 @@
     <ClCompile Include="Transform.cpp">
       <Filter>ENGINE\Component\Transform</Filter>
     </ClCompile>
-    <ClCompile Include="stdafx.cpp">
-      <Filter>ENGINE\Header Files</Filter>
-    </ClCompile>
-    <ClCompile Include="MeshLoader.cpp">
-      <Filter>ENGINE\MeshLoader</Filter>
-    </ClCompile>
     <ClCompile Include="Timer.cpp">
       <Filter>ENGINE\System\Timer</Filter>
     </ClCompile>
@@ -283,19 +288,43 @@
     <ClCompile Include="RenderManager.cpp">
       <Filter>ENGINE\Managers\Render</Filter>
     </ClCompile>
+    <ClCompile Include="CameraManager.cpp">
+      <Filter>ENGINE\Managers\Camera</Filter>
+    </ClCompile>
+    <ClCompile Include="Camera.cpp">
+      <Filter>ENGINE\Camera</Filter>
+    </ClCompile>
+    <ClCompile Include="Math.cpp">
+      <Filter>ENGINE\System\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="SkyBox.cpp">
+      <Filter>ENGINE\SkyBox</Filter>
+    </ClCompile>
+    <ClCompile Include="Mesh.cpp">
+      <Filter>ENGINE\Resource Type\Mesh</Filter>
+    </ClCompile>
+    <ClCompile Include="Sound.cpp">
+      <Filter>ENGINE\Resource Type\Sound</Filter>
+    </ClCompile>
+    <ClCompile Include="BaseResource.cpp">
+      <Filter>ENGINE\Resource Type</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>ENGINE\Header Files\stdafx</Filter>
+    </ClCompile>
+    <ClCompile Include="TileMap.cpp">
+      <Filter>ENGINE\Resource Type\TileMap</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CLInclude Include="resource.h">
-      <Filter>ENGINE\Resource Files</Filter>
+      <Filter>Resource Files</Filter>
     </CLInclude>
     <ResourceCompile Include="PolliceGame.rc">
-      <Filter>ENGINE\Resource Files</Filter>
+      <Filter>Resource Files</Filter>
     </ResourceCompile>
     <ClInclude Include="MainGame.h">
       <Filter>PolliceGame\MainGame</Filter>
-    </ClInclude>
-    <ClInclude Include="stdafx.h">
-      <Filter>ENGINE\Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Debug.h">
       <Filter>ENGINE\Header Files</Filter>
@@ -324,17 +353,14 @@
     <ClInclude Include="Scene.h">
       <Filter>ENGINE\Base\Scene</Filter>
     </ClInclude>
-    <ClInclude Include="BaseResource.h">
-      <Filter>ENGINE\Base\Resource</Filter>
-    </ClInclude>
     <ClInclude Include="Texture.h">
-      <Filter>ENGINE\Base\Resource\Texture</Filter>
+      <Filter>ENGINE\Resource Type\Texture</Filter>
     </ClInclude>
     <ClInclude Include="MultiTexture.h">
-      <Filter>ENGINE\Base\Resource\Texture\Multi</Filter>
+      <Filter>ENGINE\Resource Type\Texture\Multi</Filter>
     </ClInclude>
     <ClInclude Include="SingleTexture.h">
-      <Filter>ENGINE\Base\Resource\Texture\Single</Filter>
+      <Filter>ENGINE\Resource Type\Texture\Single</Filter>
     </ClInclude>
     <ClInclude Include="GameObject.h">
       <Filter>ENGINE\Base\GameObject</Filter>
@@ -366,9 +392,6 @@
     <ClInclude Include="Transform.h">
       <Filter>ENGINE\Component\Transform</Filter>
     </ClInclude>
-    <ClInclude Include="MeshLoader.h">
-      <Filter>ENGINE\MeshLoader</Filter>
-    </ClInclude>
     <ClInclude Include="Timer.h">
       <Filter>ENGINE\System\Timer</Filter>
     </ClInclude>
@@ -383,6 +406,33 @@
     </ClInclude>
     <ClInclude Include="RenderManager.h">
       <Filter>ENGINE\Managers\Render</Filter>
+    </ClInclude>
+    <ClInclude Include="CameraManager.h">
+      <Filter>ENGINE\Managers\Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="Camera.h">
+      <Filter>ENGINE\Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="Math.h">
+      <Filter>ENGINE\System\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="SkyBox.h">
+      <Filter>ENGINE\SkyBox</Filter>
+    </ClInclude>
+    <ClInclude Include="Mesh.h">
+      <Filter>ENGINE\Resource Type\Mesh</Filter>
+    </ClInclude>
+    <ClInclude Include="Sound.h">
+      <Filter>ENGINE\Resource Type\Sound</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseResource.h">
+      <Filter>ENGINE\Resource Type</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>ENGINE\Header Files\stdafx</Filter>
+    </ClInclude>
+    <ClInclude Include="TileMap.h">
+      <Filter>ENGINE\Resource Type\TileMap</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -6,10 +6,16 @@ class Renderer abstract
 	: public Component 
 {
 public:
+	std::function<void()> renderBegin;
+	std::function<void()> renderEnd;
+public:
+	Renderer() {}
+	Renderer(GameObject* base) : Component(base) {}
+
 	// Component을(를) 통해 상속됨
-	virtual void Init() = 0;
-	virtual void Update() = 0;
-	virtual void Destroy() = 0;
+	virtual void Init() override;
+	virtual void Update() override;
+	virtual void Destroy() override;
 
 	virtual void Render() = 0;
 };

@@ -8,7 +8,6 @@ class ObjectManager
 {
 private:
 	list<GameObject*> objectList;
-	list<GameObject*> renderList;
 public:
 	ObjectManager() {}
 	~ObjectManager() { Reset(); }
@@ -29,7 +28,6 @@ public:
 	}
 	
 	void Update();
-	void Render();
 	void Reset();
 
 private:

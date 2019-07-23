@@ -64,6 +64,7 @@ HRESULT CALLBACK OnD3D9ResetDevice( IDirect3DDevice9* pd3dDevice, const D3DSURFA
 //--------------------------------------------------------------------------------------
 void CALLBACK OnFrameMove( double fTime, float fElapsedTime, void* pUserContext )
 {
+	Timer::TimerUpdate(fElapsedTime);
 	gpMainGame->Update();
 }
 
@@ -123,6 +124,7 @@ INT WINAPI wWinMain( HINSTANCE, HINSTANCE, LPWSTR, int )
     // Enable run-time memory check for debug builds.
 #if defined(DEBUG) | defined(_DEBUG)
     _CrtSetDbgFlag( _CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF );
+	// _CrtSetBreakAlloc(456);
 
 	AllocConsole();
 
@@ -163,6 +165,8 @@ INT WINAPI wWinMain( HINSTANCE, HINSTANCE, LPWSTR, int )
 #if defined(DEBUG) | defined(_DEBUG)
 	FreeConsole();
 #endif
+
+	Timer::RemoveAll();
 
     return DXUTGetExitCode();
 }

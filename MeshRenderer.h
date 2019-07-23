@@ -6,16 +6,25 @@ class Mesh;
 class MeshRenderer :
 	public Renderer
 {
-private:
-	Mesh* mesh;
+protected:
+	Mesh* mesh = nullptr;
+	Shader* shader = nullptr;
 
-	std::function<void()> renderBegin;
-	std::function<void()> renderEnd;
 public:
+	MeshRenderer() {}
 
 	virtual void Init();
-	virtual void Update();
 	virtual void Render();
 	virtual void Destroy();
+
+	MeshRenderer& SetMesh(Mesh* mesh);
+	MeshRenderer& SetShader(Shader* shader);
+
+private:
+	void NormalRender();
+	void ShaderRender();
+
+protected:
+	void CustomRender(Mesh* mesh, Shader* shader, Matrix world);
 };
 

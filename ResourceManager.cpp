@@ -2,7 +2,7 @@
 #include "ResourceManager.h"
 #include <fstream>
 
-#include "MeshLoader.h"
+#include "Mesh.h"
 #include "SingleTexture.h"
 #include "MultiTexture.h"
 
@@ -49,7 +49,7 @@ void ResourceManager::Reset()
 
 	for each (auto iter in materialContainer)
 	{
-		for each (auto material in (*iter.second))
+		for each (auto material in *(iter.second))
 		{
 			SAFE_DELETE(material);
 		}
@@ -64,7 +64,7 @@ void ResourceManager::Reset()
 
 	for each (auto iter in shaderContainer)
 	{
-		SAFE_DELETE(iter.second);
+		SAFE_RELEASE(iter.second);
 	}
 
 	textureContainer.clear();
@@ -211,6 +211,38 @@ Shader* ResourceManager::LoadShader(const string& key, const string& path)
 	return shader;
 }
 
+Texture* ResourceManager::FindTexture(const string& key)
+{
+	if (auto find = textureContainer.find(key); find != textureContainer.end())
+		return find->second;
+
+	return nullptr;
+}
+
+Mesh* ResourceManager::FindMesh(const string& key)
+{
+	if (auto find = meshContainer.find(key); find != meshContainer.end())
+		return find->second;
+
+	return nullptr;
+}
+
+MaterialList* ResourceManager::FindMaterial(const string& key)
+{
+	if (auto find = materialContainer.find(key); find != materialContainer.end())
+		return find->second;
+
+	return nullptr;
+}
+
+Shader* ResourceManager::FindShader(const string& key)
+{
+	if (auto find = shaderContainer.find(key); find != shaderContainer.end())
+		return find->second;
+
+	return nullptr;
+}
+
 void ResourceManager::CreateBilBoardMesh()
 {
 	D3DXCreateMeshFVF(2, 4, D3DXMESH_32BIT | D3DXMESH_MANAGED,
@@ -221,10 +253,10 @@ void ResourceManager::CreateBilBoardMesh()
 
 	Vertex* v = (Vertex*)vp;
 
-	v[0] = { Vector3(-1, 1, 0), Vector3_Zero, Vector2_Zero };
-	v[0] = { Vector3(1, 1, 0), Vector3_Zero, Vector2(1, 0) };
-	v[0] = { Vector3(1, -1, 0), Vector3_Zero, Vector2_One };
-	v[0] = { Vector3(-1, -1, 0), Vector3_Zero, Vector2(0, 1) };
+	v[0] = { Vector3(-1, 1, 0), Vector3::Zero, Vector2::Zero };
+	v[0] = { Vector3(1, 1, 0), Vector3::Zero, Vector2(1, 0) };
+	v[0] = { Vector3(1, -1, 0), Vector3::Zero, Vector2::One };
+	v[0] = { Vector3(-1, -1, 0), Vector3::Zero, Vector2(0, 1) };
 
 	billBoardMesh->UnlockVertexBuffer();
 

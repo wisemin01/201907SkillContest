@@ -5,6 +5,9 @@ class Transform
 	: public Component
 {
 public:
+	Transform() {}
+	Transform(GameObject* base) : Component(base) {}
+
 	Vector3 position;
 	Vector3 rotation;
 	Vector3 scale;

@@ -5,16 +5,11 @@ Matrix Transform::GetWorldMatrix()
 {
 	Matrix world;
 
-	Matrix S, R, T;
+	Quaternion qRot = Quaternion::Rotation(rotation);
 
-	Quaternion qRot;
-	D3DXQuaternionRotationYawPitchRoll(&qRot, rotation.y, rotation.x, rotation.z);
-
-	D3DXMatrixScaling(&S, scale.x, scale.y, scale.z);
-	D3DXMatrixRotationQuaternion(&R, &qRot);
-	D3DXMatrixTranslation(&T, position.x, position.y, position.z);
-
-	world = S * R * T;
+	world = Matrix::Scaling(scale)
+		* Matrix::RotationQuaternion(qRot)
+		* Matrix::Translation(position);
 
 	return world;
 }
@@ -22,6 +17,10 @@ Matrix Transform::GetWorldMatrix()
 void Transform::Init()
 {
 	gameObject->transform = this;
+
+	position = Vector3::Zero;
+	scale = Vector3::One;
+	rotation = Vector3::Zero;
 }
 
 void Transform::Update()

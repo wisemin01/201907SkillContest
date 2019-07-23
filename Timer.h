@@ -8,7 +8,7 @@ private:
 	bool isPause = false;
 	bool isEnd = false;
 
-	void Update(float elapsedTime, float nowTime);
+	void Update(float elapsedTime);
 public:
 	Timer(float delay);
 
@@ -25,16 +25,21 @@ public:
 	__declspec(property(get = GetEnd)) bool IsEnd;
 	__declspec(property(get = GetPause)) bool IsPause;
 
-	//STATIC FIELD
+	// ========================================================
+	// STATIC FIELD
+	// ========================================================
 
 private:
 	static std::list<Timer*> timerContainer;
+
 public:
 	static void TimerUpdate(float elapsedTime);
 
-	static Timer* AddTimer(float delay);
+	static Timer* Create(float delay);
 
 	static void PauseAll(bool flag);
 
 	static void RemoveTimer(Timer* timer);
+
+	static void RemoveAll();
 };

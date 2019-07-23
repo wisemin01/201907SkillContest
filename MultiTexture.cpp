@@ -3,6 +3,15 @@
 
 #include "SingleTexture.h"
 
+MultiTexture::~MultiTexture()
+{
+	for each (auto iter in texVec)
+	{
+		SAFE_DELETE(iter);
+	}
+	texVec.clear();
+}
+
 void MultiTexture::Add(const std::string& path, int count)
 {
 	char str[256] = { 0 };

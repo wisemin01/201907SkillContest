@@ -3,7 +3,7 @@
 
 std::list<Timer*> Timer::timerContainer;
 
-void Timer::Update(float elapsedTime, float nowTime)
+void Timer::Update(float elapsedTime)
 {
 	if (isEnd == true)
 		return;
@@ -40,11 +40,11 @@ void Timer::TimerUpdate(float elapsedTime)
 {
 	for each (auto iter in timerContainer)
 	{
-		iter->Update(elapsedTime, DXUTGetTime());
+		iter->Update(elapsedTime);
 	}
 }
 
-Timer* Timer::AddTimer(float delay)
+Timer* Timer::Create(float delay)
 {
 	Timer* timer = new Timer(delay);
 	timerContainer.push_back(timer);
@@ -66,4 +66,14 @@ void Timer::RemoveTimer(Timer* timer)
 
 	timerContainer.remove(timer);
 	SAFE_DELETE(timer);
+}
+
+void Timer::RemoveAll()
+{
+	for each (auto iter in timerContainer)
+	{
+		SAFE_DELETE(iter);
+	}
+
+	timerContainer.clear();
 }

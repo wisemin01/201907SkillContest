@@ -1,0 +1,12 @@
+# ≈∏¿œ∏  ¡§∫∏
+#
+
+size 2 2
+
+tile_width 500
+tile_height 500
+
+tile 0 0 0 0
+tile 0 1 0 0
+tile 1 0 0 0
+tile 1 1 0 0

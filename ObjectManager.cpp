@@ -5,8 +5,6 @@
 
 void ObjectManager::Update()
 {
-	renderList.clear();
-
 	for (auto iter = objectList.begin(); iter != objectList.end();)
 	{
 		GameObject* object = *iter;
@@ -14,6 +12,7 @@ void ObjectManager::Update()
 		if (object->isDie == true)
 		{
 			object->Destroy();
+			object->ComDestroy();
 			SAFE_DELETE(object);
 
 			iter = objectList.erase(iter);
@@ -23,23 +22,11 @@ void ObjectManager::Update()
 			if (object->isActive == true)
 			{
 				object->Update();
-			
-				if (object->isDisplay)
-				{
-					renderList.push_back(object);
-				}
+				object->ComUpdate();
 			}
 
 			iter++;
 		}
-	}
-}
-
-void ObjectManager::Render()
-{
-	for (auto iter : renderList)
-	{
-		iter->Render();
 	}
 }
 
@@ -52,10 +39,10 @@ void ObjectManager::ClearObjectList()
 {
 	for (auto iter : objectList)
 	{
+		iter->ComDestroy();
 		iter->Destroy();
 		SAFE_DELETE(iter);
 	}
 
 	objectList.clear();
-	renderList.clear();
 }
