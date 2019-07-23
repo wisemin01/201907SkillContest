@@ -10,6 +10,9 @@ Matrix Transform::GetWorldMatrix()
 	world = Matrix::Scaling(scale)
 		* Matrix::RotationQuaternion(qRot)
 		* Matrix::Translation(position);
+	
+	if (parents)
+		world *= parents->World;
 
 	return world;
 }
@@ -31,4 +34,15 @@ void Transform::Destroy()
 {
 	if (gameObject->transform == this)
 		gameObject->transform = nullptr;
+}
+
+void Transform::AddChild(Transform* t)
+{
+	t->parents = this;
+}
+
+void Transform::RemoveChild(Transform* t)
+{
+	if (t->parents == this)
+		t->parents = nullptr;
 }

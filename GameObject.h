@@ -3,6 +3,7 @@
 class Component;
 class Renderer;
 class Transform;
+class Rigidbody;
 
 class GameObject
 {
@@ -19,6 +20,7 @@ private:
 public:
 	Renderer* renderer = nullptr;
 	Transform* transform = nullptr;
+	Rigidbody* rigidbody = nullptr;
 
 private:
 

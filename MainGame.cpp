@@ -33,9 +33,9 @@ void MainGame::Destroy()
 	ObjectManager::Destroy();
 	CollisionManager::Destroy();
 	RenderManager::Destroy();
-	ResourceManager::Destroy();
 	InputManager::Destroy();
 	CameraManager::Destroy();
+	ResourceManager::Destroy();
 }
 
 void MainGame::OnReset()

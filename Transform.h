@@ -5,6 +5,8 @@ class Transform
 	: public Component
 {
 public:
+	Transform* parents = nullptr;
+public:
 	Transform() {}
 	Transform(GameObject* base) : Component(base) {}
 
@@ -20,5 +22,8 @@ public:
 	virtual void Init() override;
 	virtual void Update() override;
 	virtual void Destroy() override;
+
+	void AddChild(Transform* t);
+	void RemoveChild(Transform* t);
 };
 

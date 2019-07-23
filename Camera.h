@@ -13,6 +13,13 @@ public:
 	Vector3 lookAt		= Vector3::Zero;
 	Vector3 up			= Vector3::Zero;
 
+	__declspec(property(get = GetForward))	Vector3 Forward;
+	__declspec(property(get = GetBack))		Vector3 Back;
+	__declspec(property(get = GetRight))	Vector3 Right;
+	__declspec(property(get = GetLeft))		Vector3 Left;
+	__declspec(property(get = GetUp))		Vector3 Up;
+	__declspec(property(get = GetDown))		Vector3 Down;
+
 	Camera& SetMain() { Camera::mainCamera = this; return *this; }
 
 	virtual void Update();
@@ -21,12 +28,21 @@ public:
 	Camera& SetLookAt(Vector3 lookAt);
 	Camera& SetUp(Vector3 up);
 
+	Vector3 GetForward();
+	Vector3 GetBack();
+	Vector3 GetRight();
+	Vector3 GetLeft();
+	Vector3 GetUp();
+	Vector3 GetDown();
+
 private:
 
 	static Camera* mainCamera;
 
 	// STATIC FIELD
 public:
+
+	static Camera* GetMainCamera() { return mainCamera; }
 
 	static Camera& Create(const string& key);
 	static Camera& Find(const string& key);
