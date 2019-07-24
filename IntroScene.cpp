@@ -8,10 +8,21 @@
 
 void IntroScene::Init()
 {
-	LOAD(Mesh, "Test", "H/H.obj");
 	LOAD(Mesh, "SkyBox", "SkyBox_Sphere/Stage.obj");
-	LOAD(Mesh, "Meteor", "Meteor/Meteor.obj");
-	LOAD(Mesh, "Building", "building_1/1.obj");
+	LOAD(Mesh, "Player", "Meteor/Meteor.obj");
+
+	LOAD(Mesh, "Building1", "building_1/1.obj");
+	LOAD(Mesh, "Building2", "building_2/2.obj");
+	LOAD(Mesh, "Building3", "building_3/3.obj");
+	LOAD(Mesh, "Building4", "building_4/4.obj");
+	LOAD(Mesh, "Building5", "building_5/5.obj");
+
+	LOAD(Mesh, "Road1", "road_1/1.obj");
+	LOAD(Mesh, "Road2", "road_2/2.obj");
+	LOAD(Mesh, "Road3", "road_3/3.obj");
+	LOAD(Mesh, "Road4", "road_4/4.obj");
+	LOAD(Mesh, "Road5", "road_5/5.obj");
+
 	LOAD(Shader, "SkyBoxShader", "Shader/SkyBox.fx");
 	LOAD(Shader, "LightShader", "Shader/Lighting.fx");
 

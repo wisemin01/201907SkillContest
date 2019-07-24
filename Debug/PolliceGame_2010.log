@@ -1,4 +1,3 @@
 ﻿  IntroScene.cpp
-  Player.cpp
-  코드를 생성하고 있습니다...
+BaseResource.obj : warning LNK4075: '/EDITANDCONTINUE'이(가) '/SAFESEH' 사양으로 인해 무시됩니다.
   PolliceGame_2010.vcxproj -> D:\Programing project\[ 기능대회 ]\PolliceGame\Debug\PolliceGame.exe
