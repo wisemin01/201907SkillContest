@@ -149,6 +149,9 @@
     <Filter Include="PolliceGame\Scripts\PlayerCamera">
       <UniqueIdentifier>{7d236a2e-36ef-44c5-9797-ef8a67f49d73}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ENGINE\Component\Collider">
+      <UniqueIdentifier>{3393c13f-6ade-4c2e-b273-10c083bcc5ef}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="DXUT\Optional\directx.ico">
@@ -333,6 +336,9 @@
     <ClCompile Include="Player.cpp">
       <Filter>PolliceGame\Scripts\Player</Filter>
     </ClCompile>
+    <ClCompile Include="Collider.cpp">
+      <Filter>ENGINE\Component\Collider</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CLInclude Include="resource.h">
@@ -457,6 +463,9 @@
     </ClInclude>
     <ClInclude Include="Player.h">
       <Filter>PolliceGame\Scripts\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="Collider.h">
+      <Filter>ENGINE\Component\Collider</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

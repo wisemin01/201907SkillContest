@@ -6,13 +6,17 @@ void Player::Init()
 	AC(Transform);
 	AC(Rigidbody);
 
-	ACR(MeshRenderer).SetMesh(FIND(Mesh, "Meteor")).SetShader(FIND(Shader, "LightShader"));
+	ACR(MeshRenderer).SetMesh(FIND(Mesh, "Building"))
+		//.SetShader(FIND(Shader, "LightShader"))
+		;
 
-	transform->position = Vector3(0, 70, 0);
-	transform->scale = Vector3::One * 0.1;
+	transform->position = Vector3(0, 50, 0);
+	transform->scale = Vector3::One * 0.01;
 
 	rigidbody->useGravity = false;
 	rigidbody->drag = 56;
+
+	AC(Collider)->SetAsSphere(50);
 }
 
 void Player::Update()
@@ -49,4 +53,9 @@ void Player::Render()
 void Player::Destroy()
 {
 
+}
+
+void Player::OnCollision(Collider* other)
+{
+	DEBUG_LOG("Ãæµ¹!" << Time::Now());
 }

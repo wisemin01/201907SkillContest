@@ -10,7 +10,8 @@ void TileMap::Init()
 
 void TileMap::Update()
 {
-
+	if (INPUT.GetKeyPress('L'))
+		transform->rotation.y += D3DXToRadian(1);
 }
 
 void TileMap::Render()
@@ -25,6 +26,8 @@ void TileMap::Destroy()
 
 void TileMap::Load(const string& tileMapData)
 {
-	ACR(TileMapRenderer).LoadFromFile(tileMapData).SetShader(FIND(Shader,"LightShader"));
-	// AC(MeshRenderer)->SetMesh(FIND(Mesh, "Test")).SetShader(FIND(Shader, "LightShader"));
+	auto &renderer = ACR(TileMapRenderer);
+	renderer.LoadFromFile(tileMapData).SetShader(FIND(Shader, "LightShader"));
+
+	AC(Collider)->SetAsSphere(renderer.GetWidth());
 }

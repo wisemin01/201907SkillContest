@@ -11,6 +11,7 @@ void IntroScene::Init()
 	LOAD(Mesh, "Test", "H/H.obj");
 	LOAD(Mesh, "SkyBox", "SkyBox_Sphere/Stage.obj");
 	LOAD(Mesh, "Meteor", "Meteor/Meteor.obj");
+	LOAD(Mesh, "Building", "building_1/1.obj");
 	LOAD(Shader, "SkyBoxShader", "Shader/SkyBox.fx");
 	LOAD(Shader, "LightShader", "Shader/Lighting.fx");
 
@@ -35,6 +36,7 @@ void IntroScene::Init()
 void IntroScene::Update()
 {
 	OBJECT.Update();
+	COLLISION.CollisionCheck();
 }
 
 void IntroScene::Destroy()

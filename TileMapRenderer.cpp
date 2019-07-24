@@ -69,6 +69,16 @@ void TileMapRenderer::Render()
 	}
 }
 
+float TileMapRenderer::GetWidth()
+{
+	return mapWidthIndex * tileWidth;
+}
+
+float TileMapRenderer::GetHeight()
+{
+	return mapHeightIndex * tileHeight;
+}
+
 bool TileMapRenderer::ParseLine(ifstream& stream)
 {
 	char line[256] = { 0 };

@@ -4,6 +4,7 @@ class Component;
 class Renderer;
 class Transform;
 class Rigidbody;
+class Collider;
 
 class GameObject
 {
@@ -21,6 +22,7 @@ public:
 	Renderer* renderer = nullptr;
 	Transform* transform = nullptr;
 	Rigidbody* rigidbody = nullptr;
+	Collider* collider = nullptr;
 
 private:
 
@@ -31,6 +33,9 @@ private:
 
 	void ComUpdate();
 	void ComDestroy();
+
+public:
+	virtual void OnCollision(Collider* other) {}
 
 public:
 	template <typename _Ty>

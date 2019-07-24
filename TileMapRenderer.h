@@ -36,6 +36,9 @@ public:
 	// Renderer을(를) 통해 상속됨
 	virtual void Render() override;
 
+	float GetWidth();
+	float GetHeight();
+
 private:
 	bool ParseLine(ifstream &stream);
 	void Parse(const string& fileName);

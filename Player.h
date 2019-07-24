@@ -10,5 +10,7 @@ public:
 	virtual void Update() override;
 	virtual void Render() override;
 	virtual void Destroy() override;
+
+	virtual void OnCollision(Collider* other) override;
 };
 

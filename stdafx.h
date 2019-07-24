@@ -46,3 +46,4 @@ ostream& operator<<(ostream& os, Vector4 _Val);
 #include "MeshRenderer.h"
 #include "Camera.h"
 #include "Rigidbody.h"
+#include "Collider.h"
