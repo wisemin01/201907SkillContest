@@ -3,6 +3,8 @@
 using ulong = unsigned long;
 using uint = unsigned int;
 
+struct Matrix;
+
 struct Vector2
 	: public D3DXVECTOR2
 {
@@ -48,6 +50,8 @@ struct Vector3
 	static Vector3 Lerp(CONST Vector3& a, CONST Vector3& b, float s);
 	static float Dot(CONST Vector3& v1, CONST Vector3& v2);
 	static Vector3 Cross(CONST Vector3& v1, CONST Vector3& v2);
+	static Vector3 TransformNormal(CONST Vector3& v, CONST Matrix& m);
+	static Vector3 TransformCoord(CONST Vector3& v, CONST Matrix& m);
 };
 
 struct Vector4

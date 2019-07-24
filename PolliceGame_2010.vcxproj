@@ -402,9 +402,11 @@
     <ClCompile Include="MeshRenderer.cpp" />
     <ClCompile Include="MultiTexture.cpp" />
     <ClCompile Include="ObjectManager.cpp" />
+    <ClCompile Include="Player.cpp" />
     <ClCompile Include="Renderer.cpp" />
     <ClCompile Include="RenderManager.cpp" />
     <ClCompile Include="ResourceManager.cpp" />
+    <ClCompile Include="Rigidbody.cpp" />
     <ClCompile Include="Scene.cpp" />
     <ClCompile Include="SceneManager.cpp" />
     <ClCompile Include="SingleTexture.cpp" />
@@ -413,9 +415,10 @@
     <ClCompile Include="Sound.cpp" />
     <ClCompile Include="Stage1Scene.cpp" />
     <ClCompile Include="stdafx.cpp" />
-    <ClCompile Include="TestObject.cpp" />
+    <ClCompile Include="PlayerCamera.cpp" />
     <ClCompile Include="Texture.cpp" />
     <ClCompile Include="TileMap.cpp" />
+    <ClCompile Include="TileMapRenderer.cpp" />
     <ClCompile Include="Time.cpp" />
     <ClCompile Include="Timer.cpp" />
     <ClCompile Include="TouchEventArgs.cpp" />
@@ -438,9 +441,11 @@
     <ClInclude Include="MeshRenderer.h" />
     <ClInclude Include="MultiTexture.h" />
     <ClInclude Include="ObjectManager.h" />
+    <ClInclude Include="Player.h" />
     <ClInclude Include="Renderer.h" />
     <ClInclude Include="RenderManager.h" />
     <ClInclude Include="ResourceManager.h" />
+    <ClInclude Include="Rigidbody.h" />
     <ClInclude Include="Scene.h" />
     <ClInclude Include="SceneManager.h" />
     <ClInclude Include="SingleTexture.h" />
@@ -449,9 +454,10 @@
     <ClInclude Include="Sound.h" />
     <ClInclude Include="Stage1Scene.h" />
     <ClInclude Include="stdafx.h" />
-    <ClInclude Include="TestObject.h" />
+    <ClInclude Include="PlayerCamera.h" />
     <ClInclude Include="Texture.h" />
     <ClInclude Include="TileMap.h" />
+    <ClInclude Include="TileMapRenderer.h" />
     <ClInclude Include="Time.h" />
     <ClInclude Include="Timer.h" />
     <ClInclude Include="TouchEventArgs.h" />

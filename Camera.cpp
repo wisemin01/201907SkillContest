@@ -31,6 +31,36 @@ Camera& Camera::SetUp(Vector3 up)
 	return *this;
 }
 
+Vector3 Camera::GetForward()
+{
+	return Vector3::Normalize(lookAt - position);
+}
+
+Vector3 Camera::GetBack()
+{
+	return Vector3::Normalize(position - lookAt);
+}
+
+Vector3 Camera::GetRight()
+{
+	return Vector3::Cross(this->up, Vector3::Normalize(lookAt - position));
+}
+
+Vector3 Camera::GetLeft()
+{
+	return Vector3::Cross(Vector3::Normalize(lookAt - position), this->up);
+}
+
+Vector3 Camera::GetUp()
+{
+	return up;
+}
+
+Vector3 Camera::GetDown()
+{
+	return -up;
+}
+
 Camera& Camera::Create(const string& key)
 {
 	Camera* cam = new Camera();

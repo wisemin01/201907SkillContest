@@ -25,8 +25,6 @@ using MaterialList = std::vector<Material*>;
 using Shader = ID3DXEffect;
 using DXBuffer = ID3DXBuffer;
 
-#define ROOT_FOLDER "./Resource/"
-
 // * IF THE OBJECT IS NULL, THE FUNCTION IS NOW EXECUTED.
 #define SAFE_EXECUTE(p) if(p != nullptr) p
 
@@ -42,7 +40,7 @@ using DXBuffer = ID3DXBuffer;
 #define FIND(_Ty, RsName) RESOURCE.Find<_Ty>(RsName)
 
 // * LOAD RESOURCE AS RESOURCE MANAGER
-#define LOAD(_Ty, RsName, RsPath) RESOURCE.Load<_Ty>(RsName, ROOT_FOLDER ## RsPath)
+#define LOAD(_Ty, RsName, RsPath) RESOURCE.Load<_Ty>(RsName, "./Resource/" ## RsPath)
 
 
 // *  LAMBDA FUNC

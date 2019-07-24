@@ -13,6 +13,7 @@ void ObjectManager::Update()
 		{
 			object->Destroy();
 			object->ComDestroy();
+
 			SAFE_DELETE(object);
 
 			iter = objectList.erase(iter);

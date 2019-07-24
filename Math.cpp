@@ -55,6 +55,22 @@ Vector3 Vector3::Cross(const Vector3& v1, const Vector3& v2)
 	return v;
 }
 
+Vector3 Vector3::TransformNormal(const Vector3& v, const Matrix& m)
+{
+	Vector3 o;
+	D3DXVec3TransformNormal(&o, &v, &m);
+
+	return o;
+}
+
+Vector3 Vector3::TransformCoord(const Vector3& v, const Matrix& m)
+{
+	Vector3 o;
+	D3DXVec3TransformCoord(&o, &v, &m);
+
+	return o;
+}
+
 Matrix Matrix::Translation(float x, float y, float z)
 {
 	Matrix m;

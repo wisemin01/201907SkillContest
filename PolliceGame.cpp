@@ -124,13 +124,13 @@ INT WINAPI wWinMain( HINSTANCE, HINSTANCE, LPWSTR, int )
     // Enable run-time memory check for debug builds.
 #if defined(DEBUG) | defined(_DEBUG)
     _CrtSetDbgFlag( _CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF );
-	// _CrtSetBreakAlloc(456);
+	//_CrtSetBreakAlloc(0);
 
 	AllocConsole();
 
-	freopen("CONOUT$", "a", stdout);
-	freopen("CONOUT$", "a", stderr);
-	freopen("CONIN$", "w", stdin);
+	(VOID)(freopen("CONOUT$", "a", stdout));
+	(VOID)(freopen("CONOUT$", "a", stderr));
+	(VOID)(freopen("CONIN$", "w", stdin));
 #endif
 
     // Set the callback functions

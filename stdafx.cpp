@@ -6,6 +6,6 @@ ostream& operator<<(ostream& os, Vector2 _Val) {
 }
 
 ostream& operator<<(ostream& os, Vector3 _Val) {
-	os << _Val.x << ", " << _Val.y << "," << _Val.z;
+	os << _Val.x << ", " << _Val.y << ", " << _Val.z;
 	return os;
 }

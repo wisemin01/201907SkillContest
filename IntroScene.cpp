@@ -1,13 +1,14 @@
 #include "DXUT.h"
 #include "IntroScene.h"
 
-#include "TestObject.h"
+#include "PlayerCamera.h"
 #include "SkyBox.h"
 #include "TileMap.h"
+#include "Player.h"
 
 void IntroScene::Init()
 {
-	LOAD(Mesh, "Test", "A/a.obj");
+	LOAD(Mesh, "Test", "H/H.obj");
 	LOAD(Mesh, "SkyBox", "SkyBox_Sphere/Stage.obj");
 	LOAD(Shader, "SkyBoxShader", "Shader/SkyBox.fx");
 
@@ -17,15 +18,14 @@ void IntroScene::Init()
 		.SetMain();
 
 	Camera::Create("Camera01")
-		.SetPosition(Vector3(0, 0, -580))
+		.SetPosition(Vector3(0, 0, -200))
 		.SetLookAt(Vector3::Zero)
 		.SetUp(Vector3::Up)
 		.SetMain();
 
-	// TileMapRenderer r;
-	// r.LoadFromFile("./Resource/Data/TILEMAP.txt");
-
-	Instance(TestObject);
+	auto player = Instance(Player);
+	Instance(PlayerCamera)->SetTarget(player->transform);
+	Instance(TileMap)->Load("./Resource/Data/TILEMAP.txt");
 }
 
 void IntroScene::Update()
@@ -35,5 +35,5 @@ void IntroScene::Update()
 
 void IntroScene::Destroy()
 {
-	RESOURCE.Reset();
+	OBJECT.Reset();
 }
