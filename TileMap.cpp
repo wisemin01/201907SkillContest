@@ -10,8 +10,6 @@ void TileMap::Init()
 
 void TileMap::Update()
 {
-	if (INPUT.GetKeyPress('L'))
-		transform->rotation.y += D3DXToRadian(1);
 }
 
 void TileMap::Render()

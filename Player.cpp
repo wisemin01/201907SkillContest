@@ -10,8 +10,8 @@ void Player::Init()
 		//.SetShader(FIND(Shader, "LightShader"))
 		;
 
-	transform->position = Vector3(0, 50, 0);
-	transform->scale = Vector3::One * 0.01;
+	transform->position = Vector3(0, 200, 0);
+	transform->scale = Vector3::One * 0.02;
 
 	rigidbody->useGravity = false;
 	rigidbody->drag = 56;
@@ -21,7 +21,7 @@ void Player::Init()
 
 void Player::Update()
 {
-	float speed = 30;
+	float speed = 90;
 
 	if (INPUT.GetKeyPress('W'))
 		rigidbody->AddForce(Vector3(0, 0, speed * Time::DeltaTime()));
@@ -40,9 +40,6 @@ void Player::Update()
 
 	if (INPUT.GetKeyPress(VK_LSHIFT))
 		rigidbody->AddForce(Vector3(0, -speed * Time::DeltaTime(), 0));
-
-
-	CAMERA.LightPosition = transform->position;
 }
 
 void Player::Render()

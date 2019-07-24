@@ -15,7 +15,7 @@ void IntroScene::Init()
 	LOAD(Shader, "SkyBoxShader", "Shader/SkyBox.fx");
 	LOAD(Shader, "LightShader", "Shader/Lighting.fx");
 
-	CAMERA.LightPosition = Vector3(0, 300, 0);
+	CAMERA.LightPosition = Vector3(0, 10000, 0);
 
 	SkyBox::Create("SkyBox01")
 		.SetMesh("SkyBox")

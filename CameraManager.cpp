@@ -6,7 +6,7 @@
 
 CameraManager::CameraManager()
 {
-	matProj = Matrix::PerspectiveFovLH(D3DXToRadian(45.0f), 16.f / 9.f, 1.f, 5000.f);
+	matProj = Matrix::PerspectiveFovLH(D3DXToRadian(45.0f), 16.f / 9.f, 1.f, 50000.f);
 	DXUTGetD3D9Device()->SetTransform(D3DTS_PROJECTION, &matProj);
 	SetViewMatrix();
 }
