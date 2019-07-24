@@ -35,6 +35,23 @@ void Collider::SetAsSphere(float radius)
 
 	sphereData->center = gameObject->transform->position;
 	sphereData->length = radius;
+
+	D3DXCreateSphere(DXUTGetD3D9Device(), radius, 20, 20, &debugMesh, nullptr);
+
+	gameObject->SetRenderBegin(LAMBDA{
+		auto device = DXUTGetD3D9Device();
+
+		device->SetTransform(D3DTS_WORLD, &gameObject->transform->World);
+
+		device->SetRenderState(D3DRS_FILLMODE, D3DFILL_WIREFRAME);
+		device->SetRenderState(D3DRS_CULLMODE, D3DCULL_NONE);
+
+		if (debugMesh)
+			debugMesh->DrawSubset(0);
+
+		device->SetRenderState(D3DRS_CULLMODE, D3DCULL_CCW);
+		device->SetRenderState(D3DRS_FILLMODE, D3DFILL_SOLID);
+		});
 }
 
 bool Collider::IsCollision(const Collider* col1, const Collider* col2)
