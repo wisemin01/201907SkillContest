@@ -6,10 +6,13 @@
 
 RenderManager::RenderManager()
 {
+	DXUTGetD3D9Device()->SetRenderState(D3DRS_LIGHTING, false);
 }
 
 RenderManager::~RenderManager()
 {
+	DXUTGetD3D9Device()->SetRenderState(D3DRS_LIGHTING, true);
+
 	rendererList.clear();
 	SkyBox::RemoveAll();
 }

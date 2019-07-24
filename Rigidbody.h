@@ -10,7 +10,7 @@ public:
 	Vector3 velocity = Vector3::Zero;
 
 	float mass = 0.0f;
-	float drag = 0.999f;
+	float drag = 50;
 
 	bool useGravity = true;
 

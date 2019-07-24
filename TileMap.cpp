@@ -25,8 +25,6 @@ void TileMap::Destroy()
 
 void TileMap::Load(const string& tileMapData)
 {
-	ACR(TileMapRenderer).LoadFromFile(tileMapData);
-
-	SetRenderBegin(LAMBDA{ DXUTGetD3D9Device()->SetRenderState(D3DRS_LIGHTING, false); });
-	SetRenderEnd(LAMBDA{ DXUTGetD3D9Device()->SetRenderState(D3DRS_LIGHTING, true); });
+	ACR(TileMapRenderer).LoadFromFile(tileMapData).SetShader(FIND(Shader,"LightShader"));
+	// AC(MeshRenderer)->SetMesh(FIND(Mesh, "Test")).SetShader(FIND(Shader, "LightShader"));
 }

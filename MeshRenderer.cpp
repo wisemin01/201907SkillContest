@@ -15,13 +15,9 @@ void MeshRenderer::Render()
 		return;
 
 	if (shader == nullptr)
-	{
-		NormalRender();
-	}
+		NormalRender(gameObject->transform->World);
 	else
-	{
-		ShaderRender();
-	}
+		ShaderRender(gameObject->transform->World);
 }
 
 void MeshRenderer::Destroy()
@@ -41,12 +37,12 @@ MeshRenderer& MeshRenderer::SetShader(Shader* shader)
 	return *this;
 }
 
-void MeshRenderer::NormalRender()
+void MeshRenderer::NormalRender(Matrix mat)
 {
 	auto device = DXUTGetD3D9Device();
 	auto transform = gameObject->transform;
 
-	device->SetTransform(D3DTS_WORLD, &transform->World);
+	device->SetTransform(D3DTS_WORLD, &mat);
 
 	if (renderBegin) renderBegin();
 
@@ -69,16 +65,14 @@ void MeshRenderer::NormalRender()
 	if (renderEnd) renderEnd();
 }
 
-void MeshRenderer::ShaderRender()
+void MeshRenderer::ShaderRender(Matrix mat)
 {
 	auto device = DXUTGetD3D9Device();
-	auto transform = gameObject->transform;
 
-	Matrix world = transform->World;
 	Matrix view = CAMERA.GetViewMatrix();
 	Matrix proj = CAMERA.GetProjMatrix();
 
-	device->SetTransform(D3DTS_WORLD, &world);
+	device->SetTransform(D3DTS_WORLD, &mat);
 
 	device->SetSamplerState(0, D3DSAMP_MAGFILTER, D3DTEXF_LINEAR);
 	device->SetSamplerState(0, D3DSAMP_MINFILTER, D3DTEXF_LINEAR);
@@ -86,13 +80,13 @@ void MeshRenderer::ShaderRender()
 
 	if (renderBegin) renderBegin();
 
-	shader->SetMatrix(D3DXHANDLE("gWorldMatrix"), &world);
+	shader->SetMatrix(D3DXHANDLE("gWorldMatrix"), &mat);
 	shader->SetMatrix(D3DXHANDLE("gViewMatrix"), &view);
 	shader->SetMatrix(D3DXHANDLE("gProjMatrix"), &proj);
 	
 	shader->SetVector(D3DXHANDLE("gCameraPos"), &Vector4(CAMERA.GetMainCamPosition(), 1.0f));
-	shader->SetVector(D3DXHANDLE("gLightPos"), &Vector4(CAMERA.GetLightPosition(), 1.f));
-	shader->SetVector(D3DXHANDLE("gAmbent"), &Vector4(0.5f, 0.5f, 0.5f, 1.f));
+	shader->SetVector(D3DXHANDLE("gLightPos"), &Vector4(CAMERA.LightPosition, 1.f));
+	shader->SetVector(D3DXHANDLE("gAmbient"), &Vector4(0.5f, 0.5f, 0.5f, 1.f));
 
 	UINT pass = 0;
 	shader->Begin(&pass, 0);
@@ -105,12 +99,9 @@ void MeshRenderer::ShaderRender()
 			if (mesh->GetMaterial(i)->lpDiffuse)
 				shader->SetTexture(D3DXHANDLE("gDiffuseMap"), mesh->GetMaterial(i)->lpDiffuse->texture);
 			if (mesh->GetMaterial(i)->lpSpecular)
-				shader->SetTexture(D3DXHANDLE("gSpecualrMap"), mesh->GetMaterial(i)->lpSpecular->texture);
+				shader->SetTexture(D3DXHANDLE("gSpecularMap"), mesh->GetMaterial(i)->lpSpecular->texture);
 			else
-			{
-				if (mesh->GetMaterial(i)->lpDiffuse)
-					shader->SetTexture(D3DXHANDLE("gDiffuseMap"), mesh->GetMaterial(i)->lpDiffuse->texture);
-			}
+				shader->SetTexture(D3DXHANDLE("gSpecularMap"), mesh->GetMaterial(i)->lpDiffuse->texture);
 
 			shader->CommitChanges();
 
@@ -122,90 +113,6 @@ void MeshRenderer::ShaderRender()
 	}
 
 	shader->End();
-
-	if (renderEnd) renderEnd();
-}
-
-void MeshRenderer::CustomRender(Mesh* mesh, Shader* shader, Matrix world)
-{
-	if (renderBegin) renderBegin();
-
-	auto device = DXUTGetD3D9Device();
-
-	if (shader == nullptr)
-	{
-		device->SetTransform(D3DTS_WORLD, &world);
-
-		if (renderBegin) renderBegin();
-
-		device->SetSamplerState(0, D3DSAMP_MAGFILTER, D3DTEXF_LINEAR);
-		device->SetSamplerState(0, D3DSAMP_MINFILTER, D3DTEXF_LINEAR);
-		device->SetSamplerState(0, D3DSAMP_MIPFILTER, D3DTEXF_LINEAR);
-
-		for (int i = 0; i < mesh->GetNumMaterials(); ++i)
-		{
-			if (mesh->GetMaterial(i)->lpDiffuse)
-			{
-				device->SetTexture(0, mesh->GetMaterial(i)->lpDiffuse->texture);
-			}
-
-			mesh->GetMesh()->DrawSubset(i);
-
-			device->SetTexture(0, nullptr);
-		}
-
-		if (renderEnd) renderEnd();
-	}
-	else
-	{
-		Matrix view = CAMERA.GetViewMatrix();
-		Matrix proj = CAMERA.GetProjMatrix();
-
-		device->SetTransform(D3DTS_WORLD, &world);
-
-		device->SetSamplerState(0, D3DSAMP_MAGFILTER, D3DTEXF_LINEAR);
-		device->SetSamplerState(0, D3DSAMP_MINFILTER, D3DTEXF_LINEAR);
-		device->SetSamplerState(0, D3DSAMP_MIPFILTER, D3DTEXF_LINEAR);
-
-		if (renderBegin) renderBegin();
-
-		shader->SetMatrix(D3DXHANDLE("gWorldMatrix"), &world);
-		shader->SetMatrix(D3DXHANDLE("gViewMatrix"), &view);
-		shader->SetMatrix(D3DXHANDLE("gProjMatrix"), &proj);
-
-		shader->SetVector(D3DXHANDLE("gCameraPos"), &Vector4(CAMERA.GetMainCamPosition(), 1.0f));
-		shader->SetVector(D3DXHANDLE("gLightPos"), &Vector4(CAMERA.GetLightPosition(), 1.f));
-		shader->SetVector(D3DXHANDLE("gAmbent"), &Vector4(0.5f, 0.5f, 0.5f, 1.f));
-
-		UINT pass = 0;
-		shader->Begin(&pass, 0);
-
-		for (int j = 0; j < pass; ++j)
-		{
-			shader->BeginPass(j);
-			for (int i = 0; i < mesh->GetNumMaterials(); ++i)
-			{
-				if (mesh->GetMaterial(i)->lpDiffuse)
-					shader->SetTexture(D3DXHANDLE("gDiffuseMap"), mesh->GetMaterial(i)->lpDiffuse->texture);
-				if (mesh->GetMaterial(i)->lpSpecular)
-					shader->SetTexture(D3DXHANDLE("gSpecualrMap"), mesh->GetMaterial(i)->lpSpecular->texture);
-				else
-				{
-					if (mesh->GetMaterial(i)->lpDiffuse)
-						shader->SetTexture(D3DXHANDLE("gDiffuseMap"), mesh->GetMaterial(i)->lpDiffuse->texture);
-				}
-
-				shader->CommitChanges();
-
-				mesh->GetMesh()->DrawSubset(i);
-
-				device->SetTexture(0, nullptr);
-			}
-			shader->EndPass();
-		}
-
-		shader->End();
-	}
 
 	if (renderEnd) renderEnd();
 }

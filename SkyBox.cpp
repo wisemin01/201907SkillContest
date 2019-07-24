@@ -40,7 +40,6 @@ void SkyBox::DrawSkyBox(bool zbufferEnable)
 	}
 
 	device->SetRenderState(D3DRS_CULLMODE, D3DCULL_NONE);
-	device->SetRenderState(D3DRENDERSTATETYPE::D3DRS_LIGHTING, false);
 
 	// RENDERING
 
@@ -55,7 +54,6 @@ void SkyBox::DrawSkyBox(bool zbufferEnable)
 	}
 
 	device->SetRenderState(D3DRS_CULLMODE, D3DCULL_CCW);
-	device->SetRenderState(D3DRENDERSTATETYPE::D3DRS_LIGHTING, true);
 }
 
 void SkyBox::SetMain()

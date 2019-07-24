@@ -26,7 +26,7 @@ private:
 
 public:
 
-	void LoadFromFile(const string& path);
+	TileMapRenderer& LoadFromFile(const string& path);
 
 	// Component을(를) 통해 상속됨
 	virtual void Init() override;

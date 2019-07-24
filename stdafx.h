@@ -19,7 +19,6 @@ using namespace std;
 
 #include "Math.h"
 #include "Define.h"
-#include "Debug.h"
 #include "EventHandler.h"
 #include "Time.h"
 #include "Timer.h"
@@ -28,6 +27,7 @@ using namespace std;
 
 ostream& operator<<(ostream& os, Vector2 _Val);
 ostream& operator<<(ostream& os, Vector3 _Val);
+ostream& operator<<(ostream& os, Vector4 _Val);
 
 // MANAGER INCLUDE
 

@@ -17,6 +17,8 @@ public:
 	CameraManager();
 	~CameraManager();
 
+	__declspec(property(get = GetLightPosition, put = SetLightPosition)) Vector3 LightPosition;
+		 
 	void SetViewMatrix();
 
 	void SetSkyBox(SkyBox* skyBox);
@@ -26,6 +28,8 @@ public:
 
 	Vector3 GetMainCamPosition();
 	Vector3 GetLightPosition();
+
+	void SetLightPosition(Vector3 light);
 
 private:
 	void DrawSkyBox(bool zbufferMode);

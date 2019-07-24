@@ -6,15 +6,13 @@ void Player::Init()
 	AC(Transform);
 	AC(Rigidbody);
 
-	ACR(MeshRenderer).SetMesh(FIND(Mesh, "Test"));
+	ACR(MeshRenderer).SetMesh(FIND(Mesh, "Meteor")).SetShader(FIND(Shader, "LightShader"));
 
-	transform->position = Vector3(0, 100, 0);
+	transform->position = Vector3(0, 70, 0);
 	transform->scale = Vector3::One * 0.1;
 
 	rigidbody->useGravity = false;
-
-	SetRenderBegin(LAMBDA{ DXUTGetD3D9Device()->SetRenderState(D3DRS_LIGHTING, false); });
-	SetRenderEnd(LAMBDA{ DXUTGetD3D9Device()->SetRenderState(D3DRS_LIGHTING, true); });
+	rigidbody->drag = 56;
 }
 
 void Player::Update()
@@ -22,18 +20,25 @@ void Player::Update()
 	float speed = 30;
 
 	if (INPUT.GetKeyPress('W'))
-		transform->position += Vector3(0, 0, speed * Time::DeltaTime());
+		rigidbody->AddForce(Vector3(0, 0, speed * Time::DeltaTime()));
 
 	if (INPUT.GetKeyPress('S'))
-		transform->position += Vector3(0, 0, -speed * Time::DeltaTime());
+		rigidbody->AddForce(Vector3(0, 0, -speed * Time::DeltaTime()));
 
 	if (INPUT.GetKeyPress('A'))
-		transform->position += Vector3(-speed * Time::DeltaTime(), 0, 0);
+		rigidbody->AddForce(Vector3(-speed * Time::DeltaTime(), 0, 0));
 
 	if (INPUT.GetKeyPress('D'))
-		transform->position += Vector3(speed * Time::DeltaTime(), 0, 0);
+		rigidbody->AddForce(Vector3(speed * Time::DeltaTime(), 0, 0));
 
-	cout << transform->position << endl;
+	if (INPUT.GetKeyPress(VK_SPACE))
+		rigidbody->AddForce(Vector3(0, speed * Time::DeltaTime(), 0));
+
+	if (INPUT.GetKeyPress(VK_LSHIFT))
+		rigidbody->AddForce(Vector3(0, -speed * Time::DeltaTime(), 0));
+
+
+	CAMERA.LightPosition = transform->position;
 }
 
 void Player::Render()

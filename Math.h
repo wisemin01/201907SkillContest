@@ -5,6 +5,12 @@ using uint = unsigned int;
 
 struct Matrix;
 
+template <typename _Ty>
+_Ty Lerp(const _Ty& s, const _Ty& e, float t)
+{
+	return s + (e - s) * t;
+}
+
 struct Vector2
 	: public D3DXVECTOR2
 {

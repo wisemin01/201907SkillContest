@@ -344,9 +344,6 @@
     <ClInclude Include="MainGame.h">
       <Filter>PolliceGame\MainGame</Filter>
     </ClInclude>
-    <ClInclude Include="Debug.h">
-      <Filter>ENGINE\Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="InputManager.h">
       <Filter>ENGINE\Managers\Input</Filter>
     </ClInclude>

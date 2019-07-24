@@ -20,11 +20,8 @@ public:
 	MeshRenderer& SetMesh(Mesh* mesh);
 	MeshRenderer& SetShader(Shader* shader);
 
-private:
-	void NormalRender();
-	void ShaderRender();
-
 protected:
-	void CustomRender(Mesh* mesh, Shader* shader, Matrix world);
+	void NormalRender(Matrix mat);
+	void ShaderRender(Matrix mat);
 };
 

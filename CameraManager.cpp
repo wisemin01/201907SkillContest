@@ -42,6 +42,11 @@ Vector3 CameraManager::GetLightPosition()
 	return light;
 }
 
+void CameraManager::SetLightPosition(Vector3 light)
+{
+	this->light = light;
+}
+
 void CameraManager::DrawSkyBox(bool zbufferMode)
 {
 	if (skyBox == nullptr)

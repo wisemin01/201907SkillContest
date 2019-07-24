@@ -2,9 +2,10 @@
 #include "TileMapRenderer.h"
 #include <fstream>
 
-void TileMapRenderer::LoadFromFile(const string& path)
+TileMapRenderer& TileMapRenderer::LoadFromFile(const string& path)
 {
 	Parse(path);
+	return *this;
 }
 
 void TileMapRenderer::Init()
@@ -38,8 +39,6 @@ void TileMapRenderer::Destroy()
 
 void TileMapRenderer::Render()
 {
-	if (renderBegin) renderBegin();
-
 	for (auto tile : *tileMap)
 	{
 		if (tile->rotation < 0 ||
@@ -48,25 +47,26 @@ void TileMapRenderer::Render()
 			tile->y < 0)
 			continue;
 
-		auto mesh = meshTypeContainer->at(tile->tileNumber);
+		mesh = meshTypeContainer->at(tile->tileNumber);
 
 		if (mesh != nullptr)
 		{
 			Matrix world;
-			
+
 			Matrix S = Matrix::Identity;
-			Matrix R = Matrix::RotationX(D3DXToRadian(90)) * Matrix::RotationY(tile->rotation);
+			Matrix R = Matrix::RotationY(tile->rotation);
 			Matrix T = Matrix::Translation(tile->x * tileWidth - mapWidthIndex * tileWidth * 0.5f,
 				0, tile->y * tileHeight - mapHeightIndex * tileHeight * 0.5f);
 
 			world = S * R * T;
-			world *= gameObject->transform->World;
+			world = world * gameObject->transform->World;
 
-			CustomRender(mesh, shader, world);
+			if (shader == nullptr)
+				NormalRender(world);
+			else
+				ShaderRender(world);
 		}
 	}
-
-	if (renderEnd) renderEnd();
 }
 
 bool TileMapRenderer::ParseLine(ifstream& stream)

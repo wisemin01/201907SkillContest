@@ -14,11 +14,16 @@ void Rigidbody::Update()
 		force -= Gravity;
 
 	velocity += force;
+	force = Vector3::Zero;
 
 	if (gameObject->transform)
 		gameObject->transform->position += velocity;
 
-	velocity *= drag * Time::DeltaTime();
+	float real_drag = drag * Time::DeltaTime();
+
+	if (real_drag >= 1.0f) real_drag = 0.99f;
+	
+	velocity *= real_drag;
 }
 
 void Rigidbody::Destroy()

@@ -84,7 +84,8 @@ public:
     // These should be called before Enumerate(). 
     //
     // Use these calls and the IsDeviceAcceptable to control the contents of 
-    // the enumeration object, which affects the device selection and the device settings dialog.
+    // the enumeration object, which affects the device selection and the device settings dia
+	
     void                    SetRequirePostPixelShaderBlending( bool bRequire )
     {
         m_bRequirePostPixelShaderBlending = bRequire;

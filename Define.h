@@ -28,6 +28,9 @@ using DXBuffer = ID3DXBuffer;
 // * IF THE OBJECT IS NULL, THE FUNCTION IS NOW EXECUTED.
 #define SAFE_EXECUTE(p) if(p != nullptr) p
 
+// * DEBUG LOG
+#define DEBUG_LOG(text) cout << text << endl;
+
 // * RETURN POINTER
 #define AC(c) AddComponent<c>()
 #define GC(c) GetComponent<c>()

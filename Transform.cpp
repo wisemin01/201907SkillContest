@@ -17,6 +17,11 @@ Matrix Transform::GetWorldMatrix()
 	return world;
 }
 
+Matrix Transform::GetRotationMatrix()
+{
+	return Matrix::RotationQuaternion(Quaternion::Rotation(rotation));
+}
+
 void Transform::Init()
 {
 	gameObject->transform = this;
