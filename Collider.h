@@ -26,6 +26,8 @@ class Collider :
 
 private:
 
+	LPD3DXMESH debugMesh = nullptr;
+
 	SphereData* sphereData = nullptr;
 
 public:

@@ -26,11 +26,11 @@ void Player::Update()
 	if (INPUT.GetKeyPress('W'))
 		rigidbody->AddForce(Vector3(0, 0, speed * Time::DeltaTime()));
 
-	if (INPUT.GetKeyPress('S'))
-		rigidbody->AddForce(Vector3(0, 0, -speed * Time::DeltaTime()));
-
 	if (INPUT.GetKeyPress('A'))
 		rigidbody->AddForce(Vector3(-speed * Time::DeltaTime(), 0, 0));
+
+	if (INPUT.GetKeyPress('S'))
+		rigidbody->AddForce(Vector3(0, 0, -speed * Time::DeltaTime()));
 
 	if (INPUT.GetKeyPress('D'))
 		rigidbody->AddForce(Vector3(speed * Time::DeltaTime(), 0, 0));
