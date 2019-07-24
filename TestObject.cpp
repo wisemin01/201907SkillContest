@@ -9,8 +9,10 @@ void TestObject::Init()
 	AC(Transform);
 
 	ACR(MeshRenderer)
-		.SetMesh(FIND(Mesh, "Test"))
-		.SetShader(FIND(Shader,"SkyBoxShader"));
+		.SetMesh(FIND(Mesh, "Test"));
+		// .SetShader(FIND(Shader,"SkyBoxShader"));
+
+	transform->scale = Vector3(0.1, 0.1, 0.1);
 
 	SetRenderBegin(LAMBDA{ DXUTGetD3D9Device()->SetRenderState(D3DRS_LIGHTING, false); });
 	SetRenderEnd(LAMBDA{ DXUTGetD3D9Device()->SetRenderState(D3DRS_LIGHTING, true); });

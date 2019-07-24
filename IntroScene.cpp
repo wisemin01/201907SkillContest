@@ -7,7 +7,7 @@
 
 void IntroScene::Init()
 {
-	LOAD(Mesh, "Test", "H/H.obj");
+	LOAD(Mesh, "Test", "A/a.obj");
 	LOAD(Mesh, "SkyBox", "SkyBox_Sphere/Stage.obj");
 	LOAD(Shader, "SkyBoxShader", "Shader/SkyBox.fx");
 
@@ -17,13 +17,13 @@ void IntroScene::Init()
 		.SetMain();
 
 	Camera::Create("Camera01")
-		.SetPosition(Vector3(0, 0, -180))
+		.SetPosition(Vector3(0, 0, -580))
 		.SetLookAt(Vector3::Zero)
 		.SetUp(Vector3::Up)
 		.SetMain();
 
-	TileMapRenderer r;
-	r.LoadFromFile("./Resource/Data/TILEMAP.txt");
+	// TileMapRenderer r;
+	// r.LoadFromFile("./Resource/Data/TILEMAP.txt");
 
 	Instance(TestObject);
 }
