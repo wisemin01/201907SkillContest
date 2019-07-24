@@ -55,8 +55,8 @@ void TileMapRenderer::Render()
 
 			Matrix S = Matrix::Identity;
 			Matrix R = Matrix::RotationY(tile->rotation);
-			Matrix T = Matrix::Translation(tile->x * tileWidth - mapWidthIndex * tileWidth * 0.5f,
-				0, tile->y * tileHeight - mapHeightIndex * tileHeight * 0.5f);
+			Matrix T = Matrix::Translation((float)tile->x * tileWidth - (float)mapWidthIndex * tileWidth * 0.5f,
+				0, (float)tile->y * tileHeight - (float)mapHeightIndex * tileHeight * 0.5f);
 
 			world = S * R * T;
 			world = world * gameObject->transform->World;

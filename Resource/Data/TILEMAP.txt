@@ -3,24 +3,24 @@
 # ! 주의점 모든 번호는 0번부터 시작한다.
 # 시작점도 (0, 0)
 
-# size <가로> <세로>					- 없어도 상관 없으나 맵이 클경우 있는게 로딩속도가 더 빠름
-# tile <x> <y> <회전> <타일종류>				- 타일을 배치하는 명령어
+# size <가로> <세로>										- 없어도 상관 없으나 맵이 클경우 있는게 로딩속도가 더 빠름
+# tile <x> <y> <회전> <타일종류>							- 타일을 배치하는 명령어
 # tile_size <타일의 가로 사이즈> <타일의 세로 사이즈>		- 하나의 타일이 어느정도의 크기를 가지는지를 설정, 필수
-# mesh <매쉬 경로>					- 매쉬를 등록함, 필수, 경로 확인 필수 순서대로 매쉬가 저장된다.
+# mesh <매쉬 경로>											- 매쉬를 등록함, 필수, 경로 확인 필수 순서대로 매쉬가 저장된다.
 
 # 예시 )
-# mesh ./Resource/A/a.obj         	<- 0번째로 a.obj 매쉬를 등록했다.
-# mesh ./Resource/B/b.obj         	<- 1번째로 b.obj 매쉬를 등록했다.
+# mesh ./Resource/A/a.obj         							<- 0번째로 a.obj 매쉬를 등록했다.
+# mesh ./Resource/B/b.obj									<- 1번째로 b.obj 매쉬를 등록했다.
 # 
-# size 10 10			<- 이 타일맵은 10x10 형태의 타일맵이다.
+# size 10 10												<- 이 타일맵은 10x10 형태의 타일맵이다.
 #
-# tile_size 2300 2300		<- 타일의 사이즈는 가로 2300 세로 2300이다.
+# tile_size 2300 2300										<- 타일의 사이즈는 가로 2300 세로 2300이다.
 #
-# tile 0 0 0 0			<- (0, 0) 위치에 0도 회전된 타일을 0번째로 로드된 매쉬로 배치한다.
-#                                            	    0번째로 로드된 매쉬는 a.obj
+# tile 0 0 0 0												<- (0, 0) 위치에 0도 회전된 타일을 0번째로 로드된 매쉬로 배치한다.
+#                                            					0번째로 로드된 매쉬는 a.obj
 #
-# tile 10 10 90 2			<- (10, 10) 위치에 90도 회전된 타일을 2번째로 로드된 매쉬로 배치한다.
-#				    2번째로 로드된 매쉬는 없기때문에 오류발생함.
+# tile 10 10 90 2											<- (10, 10) 위치에 90도 회전된 타일을 2번째로 로드된 매쉬로 배치한다.
+#																2번째로 로드된 매쉬는 없기때문에 오류발생함.
 
 # ===========================================================================================
 # 아래부터 입력합니다. 
@@ -32,131 +32,76 @@ mesh ./Resource/building_3/3.obj
 mesh ./Resource/building_4/4.obj
 mesh ./Resource/building_5/5.obj
 
-mesh ./Resource/road_1/1.obj
-mesh ./Resource/road_2/2.obj
-mesh ./Resource/road_3/3.obj
-mesh ./Resource/road_4/4.obj
-mesh ./Resource/road_5/5.obj
+mesh ./Resource/road_1/a.obj
+mesh ./Resource/road_2/b.obj
+mesh ./Resource/road_3/c.obj
+mesh ./Resource/road_4/d.obj
+mesh ./Resource/road_5/e.obj
 
-size 10 10
+size 7 7
 
 tile_size 2250 2250
 
+
+# 1번째 라인
 tile 0 0 0 0
-tile 1 0 0 1
-tile 2 0 0 2
-tile 3 0 0 3
-tile 4 0 0 4
-tile 5 0 0 5
-tile 6 0 0 6
-tile 7 0 0 7
-tile 8 0 0 8
-tile 9 0 0 9
-
-
 tile 0 1 0 0
-tile 1 1 0 1
-tile 2 1 0 2
-tile 3 1 0 3
-tile 4 1 0 4
-tile 5 1 0 5
-tile 6 1 0 6
-tile 7 1 0 7
-tile 8 1 0 8
-tile 9 1 0 9
-
-
 tile 0 2 0 0
-tile 1 2 0 1
-tile 2 2 0 2
-tile 3 2 0 3
-tile 4 2 0 4
-tile 5 2 0 5
-tile 6 2 0 6
-tile 7 2 0 7
-tile 8 2 0 8
-tile 9 2 0 9
-
-
 tile 0 3 0 0
-tile 1 3 0 1
-tile 2 3 0 2
-tile 3 3 0 3
-tile 4 3 0 4
-tile 5 3 0 5
-tile 6 3 0 6
-tile 7 3 0 7
-tile 8 3 0 8
-tile 9 3 0 9
-		   
-		   
 tile 0 4 0 0
-tile 1 4 0 1
-tile 2 4 0 2
-tile 3 4 0 3
-tile 4 4 0 4
-tile 5 4 0 5
-tile 6 4 0 6
-tile 7 4 0 7
-tile 8 4 0 8
-tile 9 4 0 9
-		   
-		   
 tile 0 5 0 0
-tile 1 5 0 1
-tile 2 5 0 2
-tile 3 5 0 3
-tile 4 5 0 4
-tile 5 5 0 5
-tile 6 5 0 6
-tile 7 5 0 7
-tile 8 5 0 8
-tile 9 5 0 9
-		   
-		   
 tile 0 6 0 0
-tile 1 6 0 1
-tile 2 6 0 2
-tile 3 6 0 3
-tile 4 6 0 4
-tile 5 6 0 5
-tile 6 6 0 6
-tile 7 6 0 7
-tile 8 6 0 8
-tile 9 6 0 9
-		   
-		   
-tile 0 7 0 0
-tile 1 7 0 1
-tile 2 7 0 2
-tile 3 7 0 3
-tile 4 7 0 4
-tile 5 7 0 5
-tile 6 7 0 6
-tile 7 7 0 7
-tile 8 7 0 8
-tile 9 7 0 9
-		   
-		   
-tile 0 8 0 0
-tile 1 8 0 1
-tile 2 8 0 2
-tile 3 8 0 3
-tile 4 8 0 4
-tile 5 8 0 5
-tile 6 8 0 6
-tile 7 8 0 7
-tile 8 8 0 8
-tile 9 8 0 9
-		   
-		   
-tile 0 9 0 0
-tile 1 9 0 1
-tile 2 9 0 2
-tile 3 9 0 3
-tile 4 9 0 4
-tile 5 9 0 5
-tile 6 9 0 6
-tile 7 9 0 7
-tile 8 9 0 8
-tile 9 9 0 9
+
+# 2번째 라인
+tile 1 0 0 0
+tile 1 1 0 0
+tile 1 2 0 0
+tile 1 3 0 0
+tile 1 4 0 0
+tile 1 5 0 0
+tile 1 6 0 0
+
+# 3번째 라인
+tile 2 0 0 0
+tile 2 1 0 0
+tile 2 2 0 0
+tile 2 3 0 0
+tile 2 4 0 0
+tile 2 5 0 0
+tile 2 6 0 0
+
+# 4번째 라인
+tile 3 0 0 0
+tile 3 1 0 0
+tile 3 2 0 0
+tile 3 3 0 0
+tile 3 4 0 0
+tile 3 5 0 0
+tile 3 6 0 0
+
+# 5번째 라인
+tile 4 0 0 0
+tile 4 1 0 0
+tile 4 2 0 0
+tile 4 3 0 0
+tile 4 4 0 0
+tile 4 5 0 0
+tile 4 6 0 0
+
+# 6번째 라인
+tile 5 0 0 0
+tile 5 1 0 0
+tile 5 2 0 0
+tile 5 3 0 0
+tile 5 4 0 0
+tile 5 5 0 0
+tile 5 6 0 0
+
+# 7번째 라인
+tile 6 0 0 0
+tile 6 1 0 0
+tile 6 2 0 0
+tile 6 3 0 0
+tile 6 4 0 0
+tile 6 5 0 0
+tile 6 6 0 0

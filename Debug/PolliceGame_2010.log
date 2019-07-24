@@ -1,3 +1,4 @@
-﻿  IntroScene.cpp
-BaseResource.obj : warning LNK4075: '/EDITANDCONTINUE'이(가) '/SAFESEH' 사양으로 인해 무시됩니다.
+﻿  TileMapRenderer.cpp
+D:\Programing project\[ 기능대회 ]\PolliceGame\TileMapRenderer.cpp(124,15): warning C4458:  'mesh' 선언은 클래스 멤버를 숨깁니다.
+D:\Programing project\[ 기능대회 ]\PolliceGame\MeshRenderer.h(10,8): message :  'MeshRenderer::mesh' 선언을 참조하십시오.
   PolliceGame_2010.vcxproj -> D:\Programing project\[ 기능대회 ]\PolliceGame\Debug\PolliceGame.exe
