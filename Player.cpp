@@ -6,17 +6,14 @@ void Player::Init()
 	AC(Transform);
 	AC(Rigidbody);
 
-	ACR(MeshRenderer).SetMesh(FIND(Mesh, "Building"))
-		//.SetShader(FIND(Shader, "LightShader"))
-		;
+	ACR(MeshRenderer).SetMesh(FIND(Mesh, "Test"))
+		.SetShader(FIND(Shader, "LightShader"));
 
 	transform->position = Vector3(0, 200, 0);
-	transform->scale = Vector3::One * 0.02;
+	transform->scale = Vector3::One * 0.05;
 
 	rigidbody->useGravity = false;
 	rigidbody->drag = 56;
-
-	AC(Collider)->SetAsSphere(50);
 }
 
 void Player::Update()

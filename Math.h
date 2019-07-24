@@ -106,7 +106,8 @@ struct Matrix :
 			_31, _32, _33, _34,
 			_41, _42, _43, _44) {}
 
-	static const Matrix Identity;
+	static const Matrix IdentityNormal;
+	static const Matrix IdentityCoord;
 
 	static Matrix Translation(float x, float y, float z);
 	static Matrix Translation(const Vector3& p);

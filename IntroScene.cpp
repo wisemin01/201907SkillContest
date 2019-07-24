@@ -10,6 +10,7 @@ void IntroScene::Init()
 {
 	LOAD(Mesh, "SkyBox", "SkyBox_Sphere/Stage.obj");
 	LOAD(Mesh, "Player", "Meteor/Meteor.obj");
+	LOAD(Mesh, "Test", "road_5/e.obj");
 
 	LOAD(Shader, "SkyBoxShader", "Shader/SkyBox.fx");
 	LOAD(Shader, "LightShader", "Shader/Lighting.fx");

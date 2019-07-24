@@ -25,6 +25,6 @@ void TileMap::Destroy()
 void TileMap::Load(const string& tileMapData)
 {
 	auto &renderer = ACR(TileMapRenderer);
-	renderer.LoadFromFile(tileMapData)
-		.SetShader(FIND(Shader, "LightShader"));
+	renderer.LoadFromFile(tileMapData);
+		//.SetShader(FIND(Shader, "LightShader"));
 }
