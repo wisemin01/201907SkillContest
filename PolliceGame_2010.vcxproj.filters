@@ -46,9 +46,6 @@
     <Filter Include="PolliceGame\Scripts">
       <UniqueIdentifier>{680c9775-03dc-4dc5-9fa3-af3182fdbcff}</UniqueIdentifier>
     </Filter>
-    <Filter Include="PolliceGame\Scripts\TestObject">
-      <UniqueIdentifier>{7d236a2e-36ef-44c5-9797-ef8a67f49d73}</UniqueIdentifier>
-    </Filter>
     <Filter Include="PolliceGame\Scenes">
       <UniqueIdentifier>{69b45db5-11ee-409b-a482-6fa99dcb2e0d}</UniqueIdentifier>
     </Filter>
@@ -137,8 +134,20 @@
     <Filter Include="ENGINE\Header Files\stdafx">
       <UniqueIdentifier>{bd34fa46-5b51-479a-8bcd-8786290a7404}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ENGINE\Resource Type\TileMap">
+    <Filter Include="ENGINE\Component\Renderer\TileMap">
       <UniqueIdentifier>{9f1a9536-4690-45e1-986a-5d11f5a58780}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="PolliceGame\Scripts\TileMap">
+      <UniqueIdentifier>{5e4eaeec-61a7-4a15-84c8-e7d65d7c3421}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ENGINE\Component\Rigidbody">
+      <UniqueIdentifier>{0082652e-a2d8-42e5-9388-4ad85b59379b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="PolliceGame\Scripts\Player">
+      <UniqueIdentifier>{ffc6abd1-d930-44fe-b520-66f99f0d87ed}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="PolliceGame\Scripts\PlayerCamera">
+      <UniqueIdentifier>{7d236a2e-36ef-44c5-9797-ef8a67f49d73}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -255,9 +264,6 @@
     <ClCompile Include="PolliceGame.cpp">
       <Filter>PolliceGame</Filter>
     </ClCompile>
-    <ClCompile Include="TestObject.cpp">
-      <Filter>PolliceGame\Scripts\TestObject</Filter>
-    </ClCompile>
     <ClCompile Include="IntroScene.cpp">
       <Filter>PolliceGame\Scenes\Intro</Filter>
     </ClCompile>
@@ -312,8 +318,20 @@
     <ClCompile Include="stdafx.cpp">
       <Filter>ENGINE\Header Files\stdafx</Filter>
     </ClCompile>
+    <ClCompile Include="TileMapRenderer.cpp">
+      <Filter>ENGINE\Component\Renderer\TileMap</Filter>
+    </ClCompile>
     <ClCompile Include="TileMap.cpp">
-      <Filter>ENGINE\Resource Type\TileMap</Filter>
+      <Filter>PolliceGame\Scripts\TileMap</Filter>
+    </ClCompile>
+    <ClCompile Include="Rigidbody.cpp">
+      <Filter>ENGINE\Component\Rigidbody</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerCamera.cpp">
+      <Filter>PolliceGame\Scripts\PlayerCamera</Filter>
+    </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>PolliceGame\Scripts\Player</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -374,9 +392,6 @@
     <ClInclude Include="TouchEventArgs.h">
       <Filter>ENGINE\System\EventHandler\EventArgs\TouchEventArgs</Filter>
     </ClInclude>
-    <ClInclude Include="TestObject.h">
-      <Filter>PolliceGame\Scripts\TestObject</Filter>
-    </ClInclude>
     <ClInclude Include="IntroScene.h">
       <Filter>PolliceGame\Scenes\Intro</Filter>
     </ClInclude>
@@ -431,8 +446,20 @@
     <ClInclude Include="stdafx.h">
       <Filter>ENGINE\Header Files\stdafx</Filter>
     </ClInclude>
+    <ClInclude Include="TileMapRenderer.h">
+      <Filter>ENGINE\Component\Renderer\TileMap</Filter>
+    </ClInclude>
     <ClInclude Include="TileMap.h">
-      <Filter>ENGINE\Resource Type\TileMap</Filter>
+      <Filter>PolliceGame\Scripts\TileMap</Filter>
+    </ClInclude>
+    <ClInclude Include="Rigidbody.h">
+      <Filter>ENGINE\Component\Rigidbody</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerCamera.h">
+      <Filter>PolliceGame\Scripts\PlayerCamera</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>PolliceGame\Scripts\Player</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

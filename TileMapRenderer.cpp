@@ -1,0 +1,142 @@
+#include "DXUT.h"
+#include "TileMapRenderer.h"
+#include <fstream>
+
+void TileMapRenderer::LoadFromFile(const string& path)
+{
+	Parse(path);
+}
+
+void TileMapRenderer::Init()
+{
+	__super::Init();
+
+	tileMap = new vector<TileInfo*>();
+	meshTypeContainer = new vector<Mesh*>();
+}
+
+void TileMapRenderer::Update()
+{
+
+}
+
+void TileMapRenderer::Destroy()
+{
+	for each (auto iter in *tileMap)
+	{
+		SAFE_DELETE(iter);
+	}
+
+	tileMap->clear();
+	meshTypeContainer->clear();
+
+	SAFE_DELETE(tileMap);
+	SAFE_DELETE(meshTypeContainer);
+
+	__super::Destroy();
+}
+
+void TileMapRenderer::Render()
+{
+	if (renderBegin) renderBegin();
+
+	for (auto tile : *tileMap)
+	{
+		if (tile->rotation < 0 ||
+			tile->tileNumber < 0 ||
+			tile->x < 0 ||
+			tile->y < 0)
+			continue;
+
+		auto mesh = meshTypeContainer->at(tile->tileNumber);
+
+		if (mesh != nullptr)
+		{
+			Matrix world;
+			
+			Matrix S = Matrix::Identity;
+			Matrix R = Matrix::RotationX(D3DXToRadian(90)) * Matrix::RotationY(tile->rotation);
+			Matrix T = Matrix::Translation(tile->x * tileWidth - mapWidthIndex * tileWidth * 0.5f,
+				0, tile->y * tileHeight - mapHeightIndex * tileHeight * 0.5f);
+
+			world = S * R * T;
+			world *= gameObject->transform->World;
+
+			CustomRender(mesh, shader, world);
+		}
+	}
+
+	if (renderEnd) renderEnd();
+}
+
+bool TileMapRenderer::ParseLine(ifstream& stream)
+{
+	char line[256] = { 0 };
+
+	stream >> line;
+
+	if (!stream)
+		return false;
+
+	if (0 == strcmp(line, "#"))
+	{
+
+	}
+	else if (0 == strcmp(line, "size"))
+	{
+		int width, height;
+
+		stream >> width >> height;
+
+		tileMap->reserve(width * height + 1);
+	}
+	else if (0 == strcmp(line, "tile"))
+	{
+		TileInfo* info = new TileInfo();
+
+		stream >> info->x >> info->y >> info->rotation >> info->tileNumber;
+
+		info->rotation = D3DXToRadian(info->rotation);
+
+		if (info->y > mapHeightIndex)
+			mapHeightIndex = info->y;
+		
+		if (info->x > mapWidthIndex)
+			mapWidthIndex = info->x;
+
+		tileMap->push_back(info);
+	}
+	else if (0 == strcmp(line, "mesh"))
+	{
+		string path;
+		stream >> path;
+
+		auto mesh = RESOURCE.Load<Mesh>(path, path);
+
+		meshTypeContainer->push_back(mesh);
+	}
+	else if (0 == strcmp(line, "tile_size"))
+	{
+		stream >> tileWidth >> tileHeight;
+	}
+
+	stream.ignore(1000, '\n');
+
+	return true;
+}
+
+void TileMapRenderer::Parse(const string& fileName)
+{
+	ifstream InFile(fileName);
+
+	if (!InFile)
+		throw exception("ifstream::open - error");
+
+	while (true)
+	{
+		if (ParseLine(InFile) == false)
+			break;
+	}
+
+	InFile.close();
+}

@@ -1,9 +1,10 @@
 #include "DXUT.h"
 #include "IntroScene.h"
 
-#include "TestObject.h"
+#include "PlayerCamera.h"
 #include "SkyBox.h"
 #include "TileMap.h"
+#include "Player.h"
 
 void IntroScene::Init()
 {
@@ -17,15 +18,14 @@ void IntroScene::Init()
 		.SetMain();
 
 	Camera::Create("Camera01")
-		.SetPosition(Vector3(0, 0, -180))
+		.SetPosition(Vector3(0, 0, -200))
 		.SetLookAt(Vector3::Zero)
 		.SetUp(Vector3::Up)
 		.SetMain();
 
-	TileMapRenderer r;
-	r.LoadFromFile("./Resource/Data/TILEMAP.txt");
-
-	Instance(TestObject);
+	auto player = Instance(Player);
+	Instance(PlayerCamera)->SetTarget(player->transform);
+	Instance(TileMap)->Load("./Resource/Data/TILEMAP.txt");
 }
 
 void IntroScene::Update()
@@ -35,5 +35,5 @@ void IntroScene::Update()
 
 void IntroScene::Destroy()
 {
-	RESOURCE.Reset();
+	OBJECT.Reset();
 }

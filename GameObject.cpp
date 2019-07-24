@@ -13,7 +13,8 @@ void GameObject::ComDestroy()
 	{
 		auto com = iter.second;
 
-		if (com) {
+		if (com)
+		{
 			com->Destroy();
 			delete com;
 			com = nullptr;
@@ -25,10 +26,12 @@ void GameObject::ComDestroy()
 
 void GameObject::SetRenderBegin(function<void()> begin)
 {
-	renderer->renderBegin = begin;
+	if (renderer)
+		renderer->renderBegin = begin;
 }
 
 void GameObject::SetRenderEnd(function<void()> end)
 {
-	renderer->renderEnd = end;
+	if (renderer)
+		renderer->renderEnd = end;
 }
