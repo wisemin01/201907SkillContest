@@ -36,6 +36,7 @@ private:
 
 public:
 	virtual void OnCollision(Collider* other) {}
+	void OnCollisionBase(Collider* other);
 
 public:
 	template <typename _Ty>

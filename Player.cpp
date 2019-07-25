@@ -5,16 +5,20 @@ void Player::Init()
 {
 	AC(Transform);
 	AC(Rigidbody);
+	AC(Collider);
+	AC(MeshRenderer);
 
-	ACR(MeshRenderer).SetMesh(FIND(Mesh, "Car3"))
-		.SetShader(FIND(Shader, "LightShader"));
+	renderer->SetMesh(FIND(Mesh, "Car3"));
+	renderer->SetShader(FIND(Shader, "LightShader"));
 
 	transform->position = Vector3(0, 200, 0);
 	transform->rotation = Vector3(0, 90, 0);
 	transform->scale = Vector3::One;
 
-	rigidbody->useGravity = false;
+	rigidbody->useGravity = true;
 	rigidbody->drag = 56;
+
+	collider->SetAsBox(100, 100, 100);
 }
 
 void Player::Update()
@@ -38,8 +42,6 @@ void Player::Update()
 
 	if (INPUT.GetKeyPress(VK_LSHIFT))
 		rigidbody->AddForce(Vector3(0, -speed * Time::DeltaTime(), 0));
-
-	ERROR_LOG("ASD");
 }
 
 void Player::Render()

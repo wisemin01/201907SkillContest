@@ -11,7 +11,7 @@ void Rigidbody::Init()
 void Rigidbody::Update()
 {
 	if (useGravity)
-		force -= Gravity;
+		force += Gravity;
 
 	velocity += force;
 	force = Vector3::Zero;
@@ -40,4 +40,12 @@ void Rigidbody::AddForce(Vector3 force)
 void Rigidbody::AddForce(float x, float y, float z)
 {
 	this->force += Vector3(x, y, z);
+}
+
+void Rigidbody::OnCollision(Transform* otherTransform, Rigidbody* otherRigidbody)
+{
+	if (isKinematic)
+		return;
+
+	Vector3 pushDirection;
 }

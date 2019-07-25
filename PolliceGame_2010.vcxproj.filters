@@ -134,9 +134,6 @@
     <Filter Include="ENGINE\Header Files\stdafx">
       <UniqueIdentifier>{bd34fa46-5b51-479a-8bcd-8786290a7404}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ENGINE\Component\Renderer\TileMap">
-      <UniqueIdentifier>{9f1a9536-4690-45e1-986a-5d11f5a58780}</UniqueIdentifier>
-    </Filter>
     <Filter Include="PolliceGame\Scripts\TileMap">
       <UniqueIdentifier>{5e4eaeec-61a7-4a15-84c8-e7d65d7c3421}</UniqueIdentifier>
     </Filter>
@@ -151,6 +148,12 @@
     </Filter>
     <Filter Include="ENGINE\Component\Collider">
       <UniqueIdentifier>{3393c13f-6ade-4c2e-b273-10c083bcc5ef}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="PolliceGame\Scripts\Tile">
+      <UniqueIdentifier>{39883db7-7b3e-4c4a-a795-4b595c49f685}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ENGINE\System\TileMapLoader">
+      <UniqueIdentifier>{9f1a9536-4690-45e1-986a-5d11f5a58780}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -321,9 +324,6 @@
     <ClCompile Include="stdafx.cpp">
       <Filter>ENGINE\Header Files\stdafx</Filter>
     </ClCompile>
-    <ClCompile Include="TileMapRenderer.cpp">
-      <Filter>ENGINE\Component\Renderer\TileMap</Filter>
-    </ClCompile>
     <ClCompile Include="TileMap.cpp">
       <Filter>PolliceGame\Scripts\TileMap</Filter>
     </ClCompile>
@@ -338,6 +338,12 @@
     </ClCompile>
     <ClCompile Include="Collider.cpp">
       <Filter>ENGINE\Component\Collider</Filter>
+    </ClCompile>
+    <ClCompile Include="Tile.cpp">
+      <Filter>PolliceGame\Scripts\Tile</Filter>
+    </ClCompile>
+    <ClCompile Include="TileMapLoader.cpp">
+      <Filter>ENGINE\System\TileMapLoader</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -449,9 +455,6 @@
     <ClInclude Include="stdafx.h">
       <Filter>ENGINE\Header Files\stdafx</Filter>
     </ClInclude>
-    <ClInclude Include="TileMapRenderer.h">
-      <Filter>ENGINE\Component\Renderer\TileMap</Filter>
-    </ClInclude>
     <ClInclude Include="TileMap.h">
       <Filter>PolliceGame\Scripts\TileMap</Filter>
     </ClInclude>
@@ -466,6 +469,12 @@
     </ClInclude>
     <ClInclude Include="Collider.h">
       <Filter>ENGINE\Component\Collider</Filter>
+    </ClInclude>
+    <ClInclude Include="Tile.h">
+      <Filter>PolliceGame\Scripts\Tile</Filter>
+    </ClInclude>
+    <ClInclude Include="TileMapLoader.h">
+      <Filter>ENGINE\System\TileMapLoader</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

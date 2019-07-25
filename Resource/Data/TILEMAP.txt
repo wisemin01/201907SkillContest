@@ -6,7 +6,7 @@
 # size <가로> <세로>										- 없어도 상관 없으나 맵이 클경우 있는게 로딩속도가 더 빠름
 # tile <x> <y> <회전> <타일종류>							- 타일을 배치하는 명령어
 # tile_size <타일의 가로 사이즈> <타일의 세로 사이즈>		- 하나의 타일이 어느정도의 크기를 가지는지를 설정, 필수
-# mesh <매쉬 경로>											- 매쉬를 등록함, 필수, 경로 확인 필수 순서대로 매쉬가 저장된다.
+# mesh <매쉬 경로> <매쉬 높이>											- 매쉬를 등록함, 필수, 경로 확인 필수 순서대로 매쉬가 저장된다.
 
 # 예시 )
 # mesh ./Resource/A/a.obj         							<- 0번째로 a.obj 매쉬를 등록했다.
@@ -26,17 +26,17 @@
 # 아래부터 입력합니다. 
 # ===========================================================================================
 
-mesh ./Resource/building_1/1.obj
-mesh ./Resource/building_2/2.obj
-mesh ./Resource/building_3/3.obj
-mesh ./Resource/building_4/4.obj
-mesh ./Resource/building_5/5.obj
+mesh ./Resource/building_1/1.obj 10000.0
+mesh ./Resource/building_2/2.obj 10000.0
+mesh ./Resource/building_3/3.obj 10000.0
+mesh ./Resource/building_4/4.obj 10000.0
+mesh ./Resource/building_5/5.obj 10000.0
 
-mesh ./Resource/road_1/a.obj
-mesh ./Resource/road_2/b.obj
-mesh ./Resource/road_3/c.obj
-mesh ./Resource/road_4/d.obj
-mesh ./Resource/road_5/e.obj
+mesh ./Resource/road_1/a.obj 40.0
+mesh ./Resource/road_2/b.obj 40.0
+mesh ./Resource/road_3/c.obj 40.0
+mesh ./Resource/road_4/d.obj 40.0
+mesh ./Resource/road_5/e.obj 40.0
 
 tile_size 2250 2250
 

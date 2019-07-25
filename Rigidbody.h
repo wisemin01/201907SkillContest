@@ -4,6 +4,7 @@
 class Rigidbody :
 	public Component
 {
+	friend class GameObject;
 public:
 
 	Vector3 force = Vector3::Zero;
@@ -14,6 +15,8 @@ public:
 
 	bool useGravity = true;
 
+	bool isKinematic = false;
+
 public:
 	// Component을(를) 통해 상속됨
 
@@ -23,6 +26,9 @@ public:
 
 	void AddForce(Vector3 force);
 	void AddForce(float x, float y, float z);
+
+private:
+	void OnCollision(Transform* otherTransform, Rigidbody* otherRigidbody);
 
 public:
 

@@ -29,8 +29,8 @@ void CollisionManager::CollisionCheck()
 
 			if (Collider::IsCollision(*col1, *col2))
 			{
-				(*col1)->gameObject->OnCollision(*col2);
-				(*col2)->gameObject->OnCollision(*col1);
+				(*col1)->gameObject->OnCollisionBase(*col2);
+				(*col2)->gameObject->OnCollisionBase(*col1);
 			}
 		}
 	}

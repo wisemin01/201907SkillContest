@@ -1,2 +1,9 @@
-﻿  PlayerCamera.cpp
+﻿  Collider.cpp
+D:\Programing project\[ 기능대회 ]\PolliceGame\Collider.cpp(101,55): warning C4458:  'center' 선언은 클래스 멤버를 숨깁니다.
+D:\Programing project\[ 기능대회 ]\PolliceGame\Collider.h(22,11): message :  'Collider::SphereData::center' 선언을 참조하십시오.
+D:\Programing project\[ 기능대회 ]\PolliceGame\Collider.cpp(122,53): warning C4458:  'center' 선언은 클래스 멤버를 숨깁니다.
+  Player.cpp
+  코드를 생성하고 있습니다...
+D:\Programing project\[ 기능대회 ]\PolliceGame\Collider.h(39,11): message :  'Collider::AABBData::center' 선언을 참조하십시오.
+D:\Programing project\[ 기능대회 ]\PolliceGame\Collider.h(39,11): message : D:\Programing project\[ 기능대회 ]\PolliceGame\Collider.cpp(119) : warning C4702: 접근할 수 없는 코드입니다.
   PolliceGame_2010.vcxproj -> D:\Programing project\[ 기능대회 ]\PolliceGame\Debug\PolliceGame.exe

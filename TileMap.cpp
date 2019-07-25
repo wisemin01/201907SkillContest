@@ -1,7 +1,7 @@
 #include "DXUT.h"
 #include "TileMap.h"
 
-#include "TileMapRenderer.h"
+#include "TileMapLoader.h"
 
 void TileMap::Init()
 {
@@ -10,6 +10,8 @@ void TileMap::Init()
 
 void TileMap::Update()
 {
+	if (INPUT.GetKeyDown('K'))
+		transform->rotation.y += 10;
 }
 
 void TileMap::Render()
@@ -24,7 +26,8 @@ void TileMap::Destroy()
 
 void TileMap::Load(const string& tileMapData)
 {
-	auto &renderer = ACR(TileMapRenderer);
-	renderer.LoadFromFile(tileMapData);
-		//.SetShader(FIND(Shader, "LightShader"));
+	TileMapLoader loader;
+
+	loader.LoadFromFile(tileMapData);
+	loader.Spawn(this);
 }

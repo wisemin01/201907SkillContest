@@ -25,16 +25,14 @@ void MeshRenderer::Destroy()
 	__super::Destroy();
 }
 
-MeshRenderer& MeshRenderer::SetMesh(Mesh* mesh)
+void MeshRenderer::SetMesh(Mesh* mesh)
 {
 	this->mesh = mesh;
-	return *this;
 }
 
-MeshRenderer& MeshRenderer::SetShader(Shader* shader)
+void MeshRenderer::SetShader(Shader* shader)
 {
 	this->shader = shader;
-	return *this;
 }
 
 void MeshRenderer::NormalRender(Matrix mat)

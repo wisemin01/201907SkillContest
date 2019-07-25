@@ -9,7 +9,6 @@ class MeshRenderer :
 protected:
 	Mesh* mesh = nullptr;
 	Shader* shader = nullptr;
-
 public:
 	MeshRenderer() {}
 
@@ -17,8 +16,8 @@ public:
 	virtual void Render();
 	virtual void Destroy();
 
-	MeshRenderer& SetMesh(Mesh* mesh);
-	MeshRenderer& SetShader(Shader* shader);
+	void SetMesh(Mesh* mesh);
+	void SetShader(Shader* shader);
 
 protected:
 	void NormalRender(Matrix mat);

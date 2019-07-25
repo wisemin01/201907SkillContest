@@ -24,6 +24,18 @@ void GameObject::ComDestroy()
 	componentContainer.clear();
 }
 
+void GameObject::OnCollisionBase(Collider* other)
+{	
+	if (rigidbody)
+	{
+		GameObject* other_obj = other->gameObject;
+
+		rigidbody->OnCollision(other_obj->transform, other_obj->rigidbody);
+	}
+
+	OnCollision(other);
+}
+
 void GameObject::SetRenderBegin(function<void()> begin)
 {
 	if (renderer)

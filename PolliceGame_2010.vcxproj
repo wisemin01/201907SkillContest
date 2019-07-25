@@ -419,8 +419,9 @@
     <ClCompile Include="stdafx.cpp" />
     <ClCompile Include="PlayerCamera.cpp" />
     <ClCompile Include="Texture.cpp" />
+    <ClCompile Include="Tile.cpp" />
     <ClCompile Include="TileMap.cpp" />
-    <ClCompile Include="TileMapRenderer.cpp" />
+    <ClCompile Include="TileMapLoader.cpp" />
     <ClCompile Include="Time.cpp" />
     <ClCompile Include="Timer.cpp" />
     <ClCompile Include="TouchEventArgs.cpp" />
@@ -458,8 +459,9 @@
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="PlayerCamera.h" />
     <ClInclude Include="Texture.h" />
+    <ClInclude Include="Tile.h" />
     <ClInclude Include="TileMap.h" />
-    <ClInclude Include="TileMapRenderer.h" />
+    <ClInclude Include="TileMapLoader.h" />
     <ClInclude Include="Time.h" />
     <ClInclude Include="Timer.h" />
     <ClInclude Include="TouchEventArgs.h" />
