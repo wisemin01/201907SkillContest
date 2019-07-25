@@ -15,7 +15,8 @@ const Vector3 Vector3::Down = Vector3(0.0f, -1.0f, 0.0f);
 
 const Vector4 Vector4::Zero = Vector4(0.0f, 0.0f, 0.0f, 0.0f);
 
-const Matrix Matrix::Identity = Matrix(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+const Matrix Matrix::IdentityCoord = Matrix(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+const Matrix Matrix::IdentityNormal = Matrix(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0);
 
 const Quaternion Quaternion::Identity = Quaternion(0, 0, 0, 0);
 

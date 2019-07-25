@@ -53,12 +53,13 @@ void TileMapRenderer::Render()
 		{
 			Matrix world;
 
-			Matrix S = Matrix::Identity;
 			Matrix R = Matrix::RotationY(tile->rotation);
-			Matrix T = Matrix::Translation((float)tile->x * tileWidth - (float)mapWidthIndex * tileWidth * 0.5f,
-				0, (float)tile->y * tileHeight - (float)mapHeightIndex * tileHeight * 0.5f);
+			Matrix T = Matrix::Translation(
+				(float)tile->x * tileWidth - (float)mapWidthIndex * tileWidth * 0.5f,
+				0,
+				(float)tile->y * tileHeight - (float)mapHeightIndex * tileHeight * 0.5f);
 
-			world = S * R * T;
+			world = R * T;
 			world = world * gameObject->transform->World;
 
 			if (shader == nullptr)
@@ -104,9 +105,11 @@ bool TileMapRenderer::ParseLine(ifstream& stream)
 	{
 		TileInfo* info = new TileInfo();
 
-		stream >> info->x >> info->y >> info->rotation >> info->tileNumber;
+		int rot;
 
-		info->rotation = D3DXToRadian(info->rotation);
+		stream >> info->x >> info->y >> rot >> info->tileNumber;
+
+		info->rotation = D3DXToRadian(rot);
 
 		if (info->y > mapHeightIndex)
 			mapHeightIndex = info->y;
