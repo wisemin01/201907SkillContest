@@ -30,6 +30,7 @@ using DXBuffer = ID3DXBuffer;
 
 // * DEBUG LOG
 #define DEBUG_LOG(text) cout << text << endl;
+#define ERROR_LOG(text) DEBUG_LOG("ERROR " << __FILE__ << " LINE : " << __LINE__ << " " << text);
 
 // * RETURN POINTER
 #define AC(c) AddComponent<c>()

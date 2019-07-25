@@ -34,6 +34,8 @@ void RenderManager::Render()
 	// SKY BOX RENDERING
 	CAMERA.DrawSkyBox(true);
 
+	DXUTGetD3D9Device()->SetRenderState(D3DRS_FILLMODE, D3DFILL_WIREFRAME);
+
 	for each (auto iter in rendererList)
 	{
 		iter->Render();
