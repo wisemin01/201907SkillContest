@@ -20,6 +20,16 @@ struct Vector2
 	Vector2(CONST D3DXVECTOR2& v) : D3DXVECTOR2(v.x, v.y) {}
 	Vector2(FLOAT x, FLOAT y) : D3DXVECTOR2(x, y) {}
 
+	Vector2 ToRadian();
+	Vector2 ToDegree();
+	void Normalize();
+
+	float Length();
+	float LengthSq();
+
+	void TransformNormal(CONST Matrix& m);
+	void TransformCoord(CONST Matrix& m);
+
 	static const Vector2 Zero;
 	static const Vector2 One;
 	static const Vector2 Two;
@@ -43,6 +53,16 @@ struct Vector3
 	Vector3(CONST D3DXFLOAT16* v) : D3DXVECTOR3(v) {}
 	Vector3(CONST D3DXVECTOR3& v) : D3DXVECTOR3(v.x, v.y, v.z) {}
 	Vector3(FLOAT x, FLOAT y, FLOAT z) : D3DXVECTOR3(x, y, z) {}
+
+	Vector3 ToRadian();
+	Vector3 ToDegree();
+	void Normalize();
+
+	float Length();
+	float LengthSq();
+
+	void TransformNormal(CONST Matrix& m);
+	void TransformCoord(CONST Matrix& m);
 
 	static const Vector3 Zero;
 	static const Vector3 One;

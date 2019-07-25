@@ -198,3 +198,87 @@ Vector2 Vector2::CCW(const Vector2& v1, const Vector2& v2)
 	D3DXVec2CCW(&v1, &v2);
 	return v;
 }
+
+Vector3 Vector3::ToRadian()
+{
+	Vector3 ret;
+	ret.x = D3DXToRadian(this->x);
+	ret.y = D3DXToRadian(this->y);
+	ret.z = D3DXToRadian(this->z);
+	return ret;
+}
+
+Vector3 Vector3::ToDegree()
+{
+	Vector3 ret;
+	ret.x = D3DXToDegree(this->x);
+	ret.y = D3DXToDegree(this->y);
+	ret.z = D3DXToDegree(this->z);
+	return ret;
+}
+
+void Vector3::Normalize()
+{
+	D3DXVec3Normalize(this, this);
+}
+
+float Vector3::Length()
+{
+	return D3DXVec3Length(this);
+}
+
+float Vector3::LengthSq()
+{
+	return D3DXVec3LengthSq(this);
+}
+
+void Vector3::TransformNormal(const Matrix& m)
+{
+	D3DXVec3TransformNormal(this, this, &m);
+}
+
+void Vector3::TransformCoord(const Matrix& m)
+{
+	D3DXVec3TransformCoord(this, this, &m);
+}
+
+Vector2 Vector2::ToRadian()
+{
+	Vector2 ret;
+	ret.x = D3DXToRadian(this->x);
+	ret.y = D3DXToRadian(this->y);
+	return ret;
+}
+
+Vector2 Vector2::ToDegree()
+{
+	Vector2 ret;
+	ret.x = D3DXToDegree(this->x);
+	ret.y = D3DXToDegree(this->y);
+	return ret;
+}
+
+void Vector2::Normalize()
+{
+	D3DXVec2Normalize(this, this);
+}
+
+float Vector2::Length()
+{
+	return D3DXVec2Length(this);
+}
+
+float Vector2::LengthSq()
+{
+	return D3DXVec2LengthSq(this);
+}
+
+void Vector2::TransformNormal(const Matrix& m)
+{
+	D3DXVec2TransformNormal(this, this, &m);
+}
+
+void Vector2::TransformCoord(const Matrix& m)
+{
+	D3DXVec2TransformCoord(this, this, &m);
+}

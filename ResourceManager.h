@@ -101,6 +101,7 @@ public:
 
 private:
 	void CreateBilBoardMesh();
+
 };
 
 #define RESOURCE ResourceManager::GetInstance()

@@ -6,11 +6,12 @@ void Player::Init()
 	AC(Transform);
 	AC(Rigidbody);
 
-	ACR(MeshRenderer).SetMesh(FIND(Mesh, "Test"))
+	ACR(MeshRenderer).SetMesh(FIND(Mesh, "Car3"))
 		.SetShader(FIND(Shader, "LightShader"));
 
 	transform->position = Vector3(0, 200, 0);
-	transform->scale = Vector3::One * 0.05;
+	transform->rotation = Vector3(0, 90, 0);
+	transform->scale = Vector3::One;
 
 	rigidbody->useGravity = false;
 	rigidbody->drag = 56;

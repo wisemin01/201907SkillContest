@@ -7,7 +7,7 @@ void PlayerCamera::Init()
 	AC(Transform);
 
 	transform->position = Vector3(0, 0, 0);
-	camOffset = Vector3(0, 600, -120);
+	camOffset = Vector3(0, 1800, -360);
 	Camera::GetMainCamera()->up = Vector3::Up;
 }
 

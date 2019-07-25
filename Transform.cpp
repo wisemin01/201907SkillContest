@@ -5,7 +5,7 @@ Matrix Transform::GetWorldMatrix()
 {
 	Matrix world;
 
-	Quaternion qRot = Quaternion::Rotation(rotation);
+	Quaternion qRot = Quaternion::Rotation(rotation.ToRadian());
 
 	world = Matrix::Scaling(scale)
 		* Matrix::RotationQuaternion(qRot)
