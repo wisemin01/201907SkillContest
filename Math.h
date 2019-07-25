@@ -78,6 +78,7 @@ struct Vector3
 	static Vector3 Cross(CONST Vector3& v1, CONST Vector3& v2);
 	static Vector3 TransformNormal(CONST Vector3& v, CONST Matrix& m);
 	static Vector3 TransformCoord(CONST Vector3& v, CONST Matrix& m);
+	static Vector3 Abs(CONST Vector3& v);
 };
 
 struct Vector4

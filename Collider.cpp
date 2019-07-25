@@ -85,7 +85,7 @@ bool Collider::IsCollision(const Collider* col1, const Collider* col2)
 	return false;
 }
 
-bool Collider::SphereData::IsCollision(const SphereData* a, const SphereData* b)
+bool SphereData::IsCollision(const SphereData* a, const SphereData* b)
 {
 	Vector3 diff = b->center - a->center;
 	float distance = Vector3::Length(diff);
@@ -98,12 +98,12 @@ bool Collider::SphereData::IsCollision(const SphereData* a, const SphereData* b)
 	return false;
 }
 
-void Collider::SphereData::Translation(const Vector3& center)
+void SphereData::Translation(const Vector3& center)
 {
 	this->center = center;
 }
 
-bool Collider::AABBData::IsCollision(const AABBData* a, const AABBData* b)
+bool AABBData::IsCollision(const AABBData* a, const AABBData* b)
 {
 	Vector3 amax = a->GetMax();
 	Vector3 bmax = b->GetMax();
@@ -114,17 +114,31 @@ bool Collider::AABBData::IsCollision(const AABBData* a, const AABBData* b)
 	if (amax.x < bmin.x || amin.x > bmax.x) return 0;
 	if (amax.y < bmin.y || amin.y > bmax.y) return 0;
 	if (amax.z < bmin.z || amin.z > bmax.z) return 0;
-	return 1;
 
-	return false;
+	return true;
 }
 
-void Collider::AABBData::Translation(const Vector3& center)
+Vector3 AABBData::Intersect(const AABBData* a, const AABBData* b)
+{
+	Vector3 amax = a->GetMax();
+	Vector3 bmax = b->GetMax();
+
+	Vector3 amin = a->GetMin();
+	Vector3 bmin = b->GetMin();
+
+	Vector3 ret;
+
+	ret = Vector3::Abs(amin - bmax);
+
+	return ret;
+}
+
+void AABBData::Translation(const Vector3& center)
 {
 	this->center = center;
 }
 
-bool Collider::MixData::IsCollision(const AABBData* a, const SphereData* b)
+bool MixData::IsCollision(const AABBData* a, const SphereData* b)
 {
 	Vector3 min = a->GetMin();
 	Vector3 max = a->GetMax();
@@ -139,7 +153,7 @@ bool Collider::MixData::IsCollision(const AABBData* a, const SphereData* b)
 	return true;
 }
 
-bool Collider::MixData::IsCollision(const SphereData* a, const AABBData* b)
+bool MixData::IsCollision(const SphereData* a, const AABBData* b)
 {
 	return IsCollision(b, a);
 }

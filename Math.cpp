@@ -72,6 +72,17 @@ Vector3 Vector3::TransformCoord(const Vector3& v, const Matrix& m)
 	return o;
 }
 
+Vector3 Vector3::Abs(const Vector3& v)
+{
+	Vector3 ret;
+
+	ret.x = fabsf(v.x);
+	ret.y = fabsf(v.y);
+	ret.z = fabsf(v.z);
+
+	return ret;
+}
+
 Matrix Matrix::Translation(float x, float y, float z)
 {
 	Matrix m;
