@@ -37,6 +37,8 @@ void Player::Update()
 
 	if (INPUT.GetKeyPress(VK_LSHIFT))
 		rigidbody->AddForce(Vector3(0, -speed * Time::DeltaTime(), 0));
+
+	ERROR_LOG("ASD");
 }
 
 void Player::Render()
