@@ -1,7 +1,7 @@
 # 3ds Max Wavefront OBJ Exporter v0.97b - (c)2007 guruware
-# File Created: 24.07.2019 14:57:00
+# File Created: 25.07.2019 11:40:05
 
-mtllib c.mtl
+mtllib C.mtl
 
 #
 # object Object077
