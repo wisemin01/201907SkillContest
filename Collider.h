@@ -24,6 +24,13 @@ class Collider :
 		void Translation(const Vector3& center);
 	};
 
+	struct AABBData
+	{
+		static bool IsCollision(const AABBData* a, const AABBData* b);
+
+		void Translation(const Vector3& center);
+	};
+
 private:
 
 	SphereData* sphereData = nullptr;
