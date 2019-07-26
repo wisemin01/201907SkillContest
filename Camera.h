@@ -13,6 +13,9 @@ public:
 	Vector3 lookAt		= Vector3::Zero;
 	Vector3 up			= Vector3::Zero;
 
+	// shake power, shake time
+	std::tuple<float, float> shakeInfo;
+	
 	__declspec(property(get = GetForward))	Vector3 Forward;
 	__declspec(property(get = GetBack))		Vector3 Back;
 	__declspec(property(get = GetRight))	Vector3 Right;

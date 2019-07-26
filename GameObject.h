@@ -18,6 +18,8 @@ private:
 
 	std::map<int, Component*> componentContainer;
 
+	string tag;
+
 public:
 	Renderer* renderer = nullptr;
 	Transform* transform = nullptr;
@@ -26,6 +28,7 @@ public:
 
 private:
 
+
 	virtual void Init() = 0;
 	virtual void Update() = 0;
 	virtual void Render() = 0;
@@ -33,6 +36,12 @@ private:
 
 	void ComUpdate();
 	void ComDestroy();
+
+public:
+	__declspec(property(get = GetTag, put = SetTag)) string Tag;
+
+	string GetTag() { return tag; }
+	void SetTag(const string& t) { tag = t; }
 
 public:
 	virtual void OnCollision(Collider* other) {}

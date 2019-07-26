@@ -1,15 +1,18 @@
 #include "DXUT.h"
 #include "Transform.h"
 
+void Transform::Rotate(Vector3 degree)
+{
+	_rotation *= Quaternion::Rotation(degree.ToRadian());
+}
+
 Matrix Transform::GetWorldMatrix()
 {
 	Matrix world;
 
-	Quaternion qRot = Quaternion::Rotation(rotation.ToRadian());
-
-	world = Matrix::Scaling(scale)
-		* Matrix::RotationQuaternion(qRot)
-		* Matrix::Translation(position);
+	world = Matrix::Scaling(_scale)
+		* Matrix::RotationQuaternion(_rotation)
+		* Matrix::Translation(_position);
 	
 	if (parents)
 		world *= parents->World;
@@ -19,7 +22,7 @@ Matrix Transform::GetWorldMatrix()
 
 Matrix Transform::GetRotationMatrix()
 {
-	return Matrix::RotationQuaternion(Quaternion::Rotation(rotation));
+	return Matrix::RotationQuaternion(rotation);
 }
 
 void Transform::Init()
@@ -28,7 +31,7 @@ void Transform::Init()
 
 	position = Vector3::Zero;
 	scale = Vector3::One;
-	rotation = Vector3::Zero;
+	rotation = Quaternion::Identity;
 }
 
 void Transform::Update()

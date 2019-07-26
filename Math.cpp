@@ -97,6 +97,13 @@ Matrix Matrix::Translation(const Vector3& p)
 	return m;
 }
 
+Matrix Matrix::Transpose(const Matrix& m)
+{
+	Matrix r;
+	D3DXMatrixTranspose(&r, &m);
+	return r;
+}
+
 Matrix Matrix::RotationX(float x)
 {
 	Matrix m;
@@ -172,6 +179,20 @@ Quaternion Quaternion::Rotation(const Vector3& euler)
 	Quaternion q;
 	D3DXQuaternionRotationYawPitchRoll(&q, euler.y, euler.x, euler.z);
 	return q;
+}
+
+Quaternion Quaternion::Rotation(const Matrix& m)
+{
+	Quaternion r;
+	D3DXQuaternionRotationMatrix(&r, &m);
+	return r;
+}
+
+Quaternion Quaternion::SLerp(const Quaternion& a, const Quaternion& b, float fs)
+{
+	Quaternion r;
+	D3DXQuaternionSlerp(&r, &a, &b, fs);
+	return r;
 }
 
 Vector2 Vector2::Normalize(const Vector2& v)

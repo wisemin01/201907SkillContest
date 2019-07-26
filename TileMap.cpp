@@ -10,8 +10,6 @@ void TileMap::Init()
 
 void TileMap::Update()
 {
-	if (INPUT.GetKeyDown('K'))
-		transform->rotation.y += 10;
 }
 
 void TileMap::Render()

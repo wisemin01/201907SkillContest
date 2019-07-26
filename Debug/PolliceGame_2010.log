@@ -1,4 +1,6 @@
-﻿  Rigidbody.cpp
-D:\Projects\2019SkillContest\Rigidbody.cpp(35,34): warning C4458:  'force' 선언은 클래스 멤버를 숨깁니다.
-D:\Projects\2019SkillContest\Rigidbody.h(10,10): message :  'Rigidbody::force' 선언을 참조하십시오.
-  PolliceGame_2010.vcxproj -> D:\Projects\2019SkillContest\Debug\PolliceGame.exe
+﻿  Car.cpp
+  IntroScene.cpp
+  Player.cpp
+  코드를 생성하고 있습니다...
+BaseResource.obj : warning LNK4075: '/EDITANDCONTINUE'이(가) '/SAFESEH' 사양으로 인해 무시됩니다.
+  PolliceGame_2010.vcxproj -> D:\Programing project\[ 기능대회 ]\PolliceGame\Debug\PolliceGame.exe

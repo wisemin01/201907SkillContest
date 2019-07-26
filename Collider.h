@@ -61,6 +61,10 @@ public:
 
 	ColliderType type = None;
 
+	__declspec(property(get = GetTag)) string Tag;
+
+	bool isTrigger = false;
+
 public:
 	// Component을(를) 통해 상속됨
 	virtual void Init();
@@ -69,6 +73,8 @@ public:
 
 	void SetAsSphere(float radius);
 	void SetAsBox(float x, float y, float z);
+
+	string GetTag() { return gameObject->Tag; }
 
 public:
 	static bool IsCollision(const Collider* col1, const Collider* col2);

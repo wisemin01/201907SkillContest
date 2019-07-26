@@ -388,8 +388,10 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="BaseResource.cpp" />
+    <ClCompile Include="Bullet.cpp" />
     <ClCompile Include="Camera.cpp" />
     <ClCompile Include="CameraManager.cpp" />
+    <ClCompile Include="Car.cpp" />
     <ClCompile Include="Collider.cpp" />
     <ClCompile Include="CollisionManager.cpp" />
     <ClCompile Include="Component.cpp" />
@@ -427,8 +429,10 @@
     <ClCompile Include="TouchEventArgs.cpp" />
     <ClCompile Include="Transform.cpp" />
     <ClInclude Include="BaseResource.h" />
+    <ClInclude Include="Bullet.h" />
     <ClInclude Include="Camera.h" />
     <ClInclude Include="CameraManager.h" />
+    <ClInclude Include="Car.h" />
     <ClInclude Include="Collider.h" />
     <ClInclude Include="CollisionManager.h" />
     <ClInclude Include="Component.h" />

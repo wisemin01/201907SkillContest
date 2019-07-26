@@ -10,9 +10,24 @@ public:
 	Transform() {}
 	Transform(GameObject* base) : Component(base) {}
 
-	Vector3 position;
-	Vector3 rotation;
-	Vector3 scale;
+	Vector3 _position;
+	Quaternion _rotation;
+	Vector3 _scale;
+
+	__declspec(property(get = GetPosition, put = SetPosition)) Vector3 position;
+	__declspec(property(get = GetRotation, put = SetRotation)) Quaternion rotation;
+	__declspec(property(get = GetScale, put = SetScale)) Vector3 scale;
+
+	Vector3 GetPosition() { return _position; }
+	void SetPosition(Vector3 v) { _position = v; }
+	Quaternion GetRotation() { return _rotation; }
+	void SetRotation(Quaternion q) { _rotation = q; }
+	Vector3 GetScale() { return _scale; }
+	void SetScale(Vector3 v) { _scale = v; }
+
+	void Rotate(Vector3 degree);
+
+	void SetRotationDegree(Vector3 r) { _rotation = Quaternion::Rotation(r.ToRadian()); }
 
 	Matrix GetWorldMatrix();
 

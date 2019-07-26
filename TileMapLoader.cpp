@@ -59,6 +59,8 @@ void TileMapLoader::Spawn(GameObject* baseTileMap)
 				.SetRotation(Vector3(0, tile->rotation, 0))
 				.SetCollider(tileWidth, mesh_info.second, tileHeight);
 
+			t.rigidbody->IsKinematic = tile->tileNumber >= 5 ? true : false;
+
 			baseTileMap->transform->AddChild(t.transform);
 		}
 	}

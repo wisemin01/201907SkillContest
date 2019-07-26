@@ -25,9 +25,6 @@
     <Filter Include="ENGINE\Base">
       <UniqueIdentifier>{e2ab7790-4cd2-49fc-b800-f707c0946106}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ENGINE\Base\Singleton">
-      <UniqueIdentifier>{039b77ee-859f-4612-b82c-66a3ecc6dd01}</UniqueIdentifier>
-    </Filter>
     <Filter Include="ENGINE\Header Files">
       <UniqueIdentifier>{290d82dc-e01a-4d7b-95b3-87fb7c2e84d6}</UniqueIdentifier>
     </Filter>
@@ -154,6 +151,15 @@
     </Filter>
     <Filter Include="ENGINE\System\TileMapLoader">
       <UniqueIdentifier>{9f1a9536-4690-45e1-986a-5d11f5a58780}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="PolliceGame\Scripts\Bullet">
+      <UniqueIdentifier>{e3816233-1988-4f0e-8ad4-382a77ac6309}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ENGINE\Base\Singleton">
+      <UniqueIdentifier>{039b77ee-859f-4612-b82c-66a3ecc6dd01}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="PolliceGame\Scripts\Car">
+      <UniqueIdentifier>{30a1ef37-e958-45a3-bb43-1eac74fb6bc7}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -345,6 +351,12 @@
     <ClCompile Include="TileMapLoader.cpp">
       <Filter>ENGINE\System\TileMapLoader</Filter>
     </ClCompile>
+    <ClCompile Include="Bullet.cpp">
+      <Filter>PolliceGame\Scripts\Bullet</Filter>
+    </ClCompile>
+    <ClCompile Include="Car.cpp">
+      <Filter>PolliceGame\Scripts\Car</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CLInclude Include="resource.h">
@@ -475,6 +487,12 @@
     </ClInclude>
     <ClInclude Include="TileMapLoader.h">
       <Filter>ENGINE\System\TileMapLoader</Filter>
+    </ClInclude>
+    <ClInclude Include="Bullet.h">
+      <Filter>PolliceGame\Scripts\Bullet</Filter>
+    </ClInclude>
+    <ClInclude Include="Car.h">
+      <Filter>PolliceGame\Scripts\Car</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

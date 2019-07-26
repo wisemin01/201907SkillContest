@@ -106,6 +106,8 @@ struct Quaternion
 
 	static Quaternion Rotation(float yaw, float pitch, float roll);
 	static Quaternion Rotation(const Vector3& euler);
+	static Quaternion Rotation(const Matrix& m);
+	static Quaternion SLerp(const Quaternion& a, const Quaternion& b, float fs);
 };
 
 struct Matrix :
@@ -132,6 +134,7 @@ struct Matrix :
 
 	static Matrix Translation(float x, float y, float z);
 	static Matrix Translation(const Vector3& p);
+	static Matrix Transpose(const Matrix& m);
 	static Matrix RotationX(float x);
 	static Matrix RotationY(float y);
 	static Matrix RotationZ(float z);

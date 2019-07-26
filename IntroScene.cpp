@@ -3,6 +3,7 @@
 
 #include "PlayerCamera.h"
 #include "SkyBox.h"
+#include "Car.h"
 #include "TileMap.h"
 #include "Player.h"
 
@@ -33,21 +34,18 @@ void IntroScene::Init()
 		.SetShader("SkyBoxShader")
 		.SetMain();
 
-	Camera::Create("Camera01")
-		.SetPosition(Vector3(0, 0, -200))
-		.SetLookAt(Vector3::Zero)
-		.SetUp(Vector3::Up)
-		.SetMain();
-
+	Instance(TileMap)->Load("./Resource/Data/TILEMAP.txt");
 	auto player = Instance(Player);
 	Instance(PlayerCamera)->SetTarget(player->transform);
-	Instance(TileMap)->Load("./Resource/Data/TILEMAP.txt");
 }
 
 void IntroScene::Update()
 {
 	OBJECT.Update();
 	COLLISION.CollisionCheck();
+
+	if(INPUT.GetKeyDown('P'))
+		Instance(Car)->Setting(FIND(Mesh, "Car" + to_string(rand() % 12 + 1)), Vector3(0, 500, 0));
 }
 
 void IntroScene::Destroy()

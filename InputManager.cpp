@@ -37,3 +37,8 @@ bool InputManager::GetKeyPress(int key)
 	return bOldKeyState[key] == true
 		&& bCurKeyState[key] == true;
 }
+
+void InputManager::MouseScrollEvent(bool flag)
+{
+	OnMouseWheelScroll(this, flag);
+}

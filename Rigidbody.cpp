@@ -1,7 +1,7 @@
 #include "DXUT.h"
 #include "Rigidbody.h"
 
-Vector3 Rigidbody::Gravity = Vector3(0.0f, -9.8f, 0.0f);
+Vector3 Rigidbody::Gravity = Vector3(0.0f, -9.8f * 10, 0.0f);
 
 void Rigidbody::Init()
 {
@@ -10,20 +10,22 @@ void Rigidbody::Init()
 
 void Rigidbody::Update()
 {
-	if (useGravity)
-	 	force += Gravity * Time::DeltaTime();
+	if (_useGravity == true && _isOnGround == false)
+	 	_force += Gravity * Time::DeltaTime() * Mass;
 
-	velocity += force;
-	force = Vector3::Zero;
+	_velocity += _force;
+	_force = Vector3::Zero;
 
 	if (gameObject->transform)
-		gameObject->transform->position += velocity;
+		gameObject->transform->position += _velocity;
 
-	float real_drag = drag * Time::DeltaTime();
+	float real_drag = _drag * Time::DeltaTime();
 
 	if (real_drag >= 1.0f) real_drag = 0.99f;
 	
-	velocity *= real_drag;
+	_velocity *= real_drag;
+
+	_isOnGround = false;
 }
 
 void Rigidbody::Destroy()
@@ -34,60 +36,72 @@ void Rigidbody::Destroy()
 
 void Rigidbody::AddForce(Vector3 force)
 {
-	this->force += force;
+	this->_force += force;
 }
 
 void Rigidbody::AddForce(float x, float y, float z)
 {
-	this->force += Vector3(x, y, z);
+	this->_force += Vector3(x, y, z);
 }
 
 void Rigidbody::OnCollision(Transform* otherTransform, Rigidbody* otherRigidbody)
 {
-	if (isKinematic)
+	if (_isKinematic)
 		return;
 
-	constexpr float reflectCoefficient = 10000.0f;
-	constexpr float velocityDragCoefficient = 0.7f;
+	if (_isFreeze)
+		return;
 
-	/*
-	gameObject->rigidbody->velocity = Vector3::Zero;
+	if (otherTransform->gameObject->collider->isTrigger
+		|| gameObject->collider->isTrigger)
+	{
+		return;
+	}
 
-	Vector3 otherVelocity = otherRigidbody ? otherRigidbody->velocity : Vector3::Zero;
-	float otherMass = otherRigidbody ? otherRigidbody->mass : 0.0f;
-
-	Vector3 pushDirection = Vector3::Normalize(gameObject->transform->position - otherTransform->position) * reflectCoefficient;
-	pushDirection += otherVelocity * velocityDragCoefficient;
-
-	AddForce(pushDirection * otherMass * Time::DeltaTime());
-
-	DEBUG_LOG(pushDirection);
-	*/
-
-	float length = gameObject->rigidbody->velocity.Length();
-
-	Vector3 pushDirection = Vector3::Normalize(gameObject->transform->position - otherTransform->position);
-
-	Vector3 data = AABBData::Intersect(gameObject->collider->aabbData, otherTransform->gameObject->collider->aabbData);
+	if (otherRigidbody && otherRigidbody->_isKinematic) {
+		_isOnGround = true;
 	
-	float interX = data.x;
-	float interY = data.y;
-	float interZ = data.z;
+		if (gameObject->rigidbody->_velocity.y < 0)
+			gameObject->rigidbody->_velocity.y = 0;
 
-	if (interX > interY && interX > interZ)
-	{
-		// X 기준 충돌
-	}
-	else if(interY > interX && interY > interZ)
-	{
-		// Y
-	}
-	else
-	{
-		// Z
+		gameObject->rigidbody->AddForce(Vector3::Up * 50.0f * Time::DeltaTime() * Mass);
+		return;
 	}
 
-	pushDirection *= length;
+	if (_isFreezeRotation == false)
+	{
+		if (otherTransform->position.x > gameObject->transform->position.x) 
+		{
+			if (otherTransform->position.y > gameObject->transform->position.y)
+				gameObject->transform->Rotate(Vector3(0, -5, 0)); // 1사분면
+			else
+				gameObject->transform->Rotate(Vector3(0, 5, 0)); // 4사분면
+		}
+		else
+		{
+			if (otherTransform->position.y > gameObject->transform->position.y)
+				gameObject->transform->Rotate(Vector3(0, 5, 0)); // 2
+			else
+				gameObject->transform->Rotate(Vector3(0, -5, 0)); // 3
+		}
+	}
 
-	AddForce(pushDirection);
+	constexpr float reflectCoefficient = 300.0f;
+	constexpr float velocityDragCoefficient = 0.7f;
+	
+	Vector3 otherVelocity = otherRigidbody ? otherRigidbody->_velocity : Vector3::Zero;
+	float otherMass = otherRigidbody ? otherRigidbody->_mass : 1.0f;
+	
+	Vector3 pushDirection = Vector3::Normalize(gameObject->transform->position - otherTransform->position);
+	Vector3 pushPower = pushDirection * reflectCoefficient;
+	
+	pushPower += gameObject->rigidbody->_velocity * _elasticity;
+	pushPower -= gameObject->rigidbody->_velocity * (1.0f - _elasticity);
+	
+	if (_isOnGround == true)
+		pushPower = Vector3::Up;
+	
+	pushPower += otherVelocity * velocityDragCoefficient;
+	
+	AddForce(pushPower * otherMass * Time::DeltaTime());
 }

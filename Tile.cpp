@@ -6,6 +6,12 @@ void Tile::Init()
 	AC(Transform);
 	AC(MeshRenderer);
 	AC(Collider);
+
+	AC(Rigidbody);
+
+	rigidbody->UseGravity = false;
+	rigidbody->IsFreeze = true;
+	rigidbody->Mass = 3.0f;
 }
 
 void Tile::Update()
@@ -40,7 +46,7 @@ Tile& Tile::SetPosition(const Vector3& pos)
 
 Tile& Tile::SetRotation(const Vector3& rot)
 {
-	transform->rotation = rot;
+	transform->SetRotationDegree(rot);
 	return *this;
 }
 

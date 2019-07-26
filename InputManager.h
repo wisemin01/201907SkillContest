@@ -21,6 +21,8 @@ public:
 	EventHandler<TouchEventArgs> OnLeftMouseClick;
 	EventHandler<TouchEventArgs> OnRightMouseClick;
 
+	EventHandler<bool> OnMouseWheelScroll;
+
 	Vector2 GetMousePos()
 	{
 		POINT pt;
@@ -36,6 +38,8 @@ public:
 	bool GetKeyDown(int key);
 	bool GetkeyUp(int key);
 	bool GetKeyPress(int key);
+
+	void MouseScrollEvent(bool flag);
 };
 
 #define INPUT InputManager::GetInstance()

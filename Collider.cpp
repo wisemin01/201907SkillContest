@@ -128,7 +128,22 @@ Vector3 AABBData::Intersect(const AABBData* a, const AABBData* b)
 
 	Vector3 ret;
 
-	ret = Vector3::Abs(amin - bmax);
+	// ret = Vector3::Abs(amin - bmax);
+
+	for (int i = 0; i < 3; i++) {
+
+		if (amax[i] > bmin[i])
+			ret[i] = amax[i] - bmin[i];
+		else if (bmin[i] > amax[i])
+			ret[i] = bmin[i] - amax[i];
+		
+		if (bmin[i] > amin[i] && bmax[i] < amax[i])
+			ret[i] = bmax[i] - bmin[i];
+		else if (amin[i] > bmin[i] && amax[i] < bmax[i])
+			ret[i] = amax[i] - amin[i];
+		else
+			ret[i] = 0;
+	}
 
 	return ret;
 }

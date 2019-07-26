@@ -94,6 +94,15 @@ void CALLBACK OnD3D9FrameRender( IDirect3DDevice9* pd3dDevice, double fTime, flo
 LRESULT CALLBACK MsgProc( HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam,
                           bool* pbNoFurtherProcessing, void* pUserContext )
 {
+	switch (uMsg)
+	{
+	case WM_MOUSEWHEEL:
+
+		INPUT.MouseScrollEvent((short)HIWORD(wParam) > 0);
+
+		break;
+	}
+
     return 0;
 }
 
